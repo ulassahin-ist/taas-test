@@ -1,0 +1,41 @@
+:root {
+ 
+  --primary:#FF27AD;
+  --primary-dark: #F1129C;
+  --secondary:#0099A8;
+  --secondary-dark: #138A96;
+
+  /* text-colors */
+  --coal: #2a2a48;
+  --coal-light: #2a2a4899;
+  --graphene: #485363;
+  --gray: #8493a8;
+
+  /* background-colors */
+  --neutral: #ffffff;
+  --dark-gray: #505357;
+  --titan-white: background: #F2F0FF;
+  --titan-gradient: background: linear-gradient(0deg, #F2F0FF, #F2F0FF), linear-gradient(87.81deg, #F2F0FF 35.04%, rgba(255, 255, 255, 0.67) 53.63%, rgba(252, 252, 255, 0.96) 64.78%, #F2F0FF 90.91%);
+  --teal-gradient: background: linear-gradient(0deg, rgba(19, 138, 150, 0.3), rgba(19, 138, 150, 0.3)), linear-gradient(88.28deg, rgba(16, 160, 174, 0.3) 14.56%, rgba(98, 214, 225, 0.3) 56.19%, rgba(21, 166, 181, 0.3) 98.69%);
+
+  --radius: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: Roboto, sans-serif;
+}
+
+body {
+  background: var(--white);
+  color: (--text);
+}
+
+.container {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0;
+}
