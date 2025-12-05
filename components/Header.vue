@@ -87,7 +87,7 @@
   border-radius: 4px;
 }
 .top-bar button:hover {
-  background: #ffffff33;
+  background: var(--darker-gray);
 }
 .top-bar p {
   color: var(--smoke);

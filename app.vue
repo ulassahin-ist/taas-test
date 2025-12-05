@@ -1,16 +1,17 @@
 <!-- app.vue -->
+
+<!-- ##NOTE## 
+        Normally i would wrap some elements like icons and images in wrappers but 
+        figma already gives a fixed size so i thought it would be unnecessary -->
 <template>
   <div>
     <Header />
-
     <main class="wide-container">
       <NuxtPage />
     </main>
   </div>
 </template>
 
-<script setup>
-// no script needed yet
-</script>
+<script setup></script>
 
 <style></style>
