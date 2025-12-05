@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 :root {
  
   --primary:#FF27AD;
@@ -10,6 +11,8 @@
   --coal-light: #2a2a4899;
   --graphene: #485363;
   --gray: #8493a8;
+  --smoke: #ECECEC80;
+  --white: #fff;
 
   /* background-colors */
   --neutral: #ffffff;
@@ -27,15 +30,60 @@
   box-sizing: border-box;
   text-decoration: none;
   font-family: Roboto, sans-serif;
+  letter-spacing: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
+/* Remove default focus outlines (we’ll add custom if needed) */
+a:focus,
+button:focus {
+  outline: none;
+}
+
+/* Unstyled button */
+button {
+  all: unset;
+  display: inline-block; 
+  cursor: pointer;
+  box-sizing: inherit;
+    -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  gap: inherit;
+  transition: 0.3s all ease;
+}
+
+button:hover,
+a:hover {
+  opacity: 0.8;
+}
 body {
   background: var(--white);
   color: (--text);
 }
+.flex{
+    display: flex;
+}
+.column{
+    flex-direction: column;
+}
+.center{
+    justify-content: center;
+    align-items: center;
+}
+.grow{
+  flex: 1;
+}
 
+.wide-container{
+     max-width: 1440px;
+     margin: auto;
+}
 .container {
-  max-width: 1440px;
-  margin: auto;
-  padding: 0;
+  max-width: 1160px;
+  width: 100%;
+  margin: 0 auto;  
 }
