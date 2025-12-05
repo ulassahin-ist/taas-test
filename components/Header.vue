@@ -80,11 +80,14 @@
   gap: 8px;
   justify-self: end;
   cursor: pointer;
-  width: fit-content;
 }
 .top-bar button {
   gap: 8px;
-  width: 99px;
+  padding: 0 16px;
+  border-radius: 4px;
+}
+.top-bar button:hover {
+  background: #ffffff33;
 }
 .top-bar p {
   color: var(--smoke);
@@ -126,6 +129,9 @@
   padding-left: 44px;
   font-size: 14px;
   font-family: Roboto;
+}
+.search input:focus {
+  outline: 1px solid var(--gray);
 }
 .user {
   font-family: Roboto;

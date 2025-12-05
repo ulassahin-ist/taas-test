@@ -56,10 +56,6 @@ button {
   transition: 0.3s all ease;
 }
 
-button:hover,
-a:hover {
-  opacity: 0.8;
-}
 body {
   background: var(--white);
   color: (--text);
