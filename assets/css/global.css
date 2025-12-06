@@ -60,8 +60,22 @@
   font-synthesis: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
 }
-
+html {
+  margin: 0;
+  padding: 0;
+  width: 100dvw;
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--white);
+  color: var(--coal);
+  width: 100dvw;
+  overflow-x: hidden;
+}
 a {
   text-decoration: none;
   color: inherit;
@@ -82,11 +96,6 @@ button {
   transition: 0.3s all ease-in-out;
 
   cursor: pointer;
-}
-
-body {
-  background: var(--white);
-  color: var(--coal);
 }
 
 /* Global Classes */
@@ -110,6 +119,9 @@ body {
 .flex-end {
   justify-content: end;
 }
+.flex-start {
+  justify-content: start;
+}
 
 .grow {
   flex: 1;
@@ -131,6 +143,9 @@ body {
 }
 .gap-20 {
   gap: 20px;
+}
+.gap-24 {
+  gap: 24px;
 }
 .gap-32 {
   gap: 32px;
@@ -254,4 +269,11 @@ body {
   max-width: 1160px;
   width: 100%;
   margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+  /* Accounts for scrollbar width */
+  body {
+    padding-right: 16px;
+  }
 }

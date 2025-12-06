@@ -12,7 +12,6 @@
   <NewsletterSignUp />
   <Banner />
   <FeaturedCategories />
-  <div style="padding-bottom: 50px">__</div>
 </template>
 
 <style scoped></style>

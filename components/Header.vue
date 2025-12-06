@@ -14,7 +14,7 @@
         <div class="header-contact gap-8 grow">
           <!-- Note: Not a button because it has no padding in figma/unmatching style-->
           <div class="phone flex center gap-8">
-            Call us:(+90) 850 123 45 67<img src="/icons/phone.svg" />
+            Call us:(+90) 850 123 45 67<img src="/icons/phone-white.svg" />
           </div>
         </div>
       </div>
@@ -32,7 +32,7 @@
         <div class="user gap-16 flex center">
           <p>Hello, <strong>Clara Clara</strong></p>
           <img class="avatar" src="/avatar.png" alt="Avatar" />
-          <img style="cursor: pointer" src="/icons/down.svg" alt="Drop" />
+          <img style="cursor: pointer" src="/icons/down-light.svg" alt="Drop" />
         </div>
         <div class="divider-vertical"></div>
         <img
