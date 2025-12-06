@@ -19,8 +19,8 @@ const toggle = (i) => {
           <button class="footer-toggle" @click="toggle(0)">
             <span class="footer-heading">CORPORATE</span>
             <span class="footer-toggle-icon">
-              <span v-if="openIndex === 0"><img src="/icons/up.svg" /></span>
-              <span v-else><img src="/icons/down.svg" /></span>
+              <img v-if="openIndex === 0" src="/icons/up.svg" />
+              <img v-else src="/icons/down.svg" />
             </span>
           </button>
 
@@ -39,8 +39,8 @@ const toggle = (i) => {
           <button class="footer-toggle" @click="toggle(1)">
             <span class="footer-heading">SHOPPING</span>
             <span class="footer-toggle-icon">
-              <span v-if="openIndex === 1"><img src="/icons/up.svg" /></span>
-              <span v-else><img src="/icons/down.svg" /></span>
+              <img v-if="openIndex === 1" src="/icons/up.svg" />
+              <img v-else src="/icons/down.svg" />
             </span>
           </button>
 
@@ -59,8 +59,8 @@ const toggle = (i) => {
           <button class="footer-toggle" @click="toggle(2)">
             <span class="footer-heading">LEGAL</span>
             <span class="footer-toggle-icon">
-              <span v-if="openIndex === 2"><img src="/icons/up.svg" /></span>
-              <span v-else><img src="/icons/down.svg" /></span>
+              <img v-if="openIndex === 2" src="/icons/up.svg" />
+              <img v-else src="/icons/down.svg" />
             </span>
           </button>
 
@@ -79,8 +79,8 @@ const toggle = (i) => {
           <button class="footer-toggle" @click="toggle(3)">
             <span class="footer-heading">HELP CENTER</span>
             <span class="footer-toggle-icon">
-              <span v-if="openIndex === 3"><img src="/icons/up.svg" /></span>
-              <span v-else><img src="/icons/down.svg" /></span>
+              <img v-if="openIndex === 3" src="/icons/up.svg" />
+              <img v-else src="/icons/down.svg" />
             </span>
           </button>
 
@@ -97,8 +97,8 @@ const toggle = (i) => {
           <button class="footer-toggle" @click="toggle(4)">
             <span class="footer-heading">CONTACT US</span>
             <span class="footer-toggle-icon">
-              <span v-if="openIndex === 4"><img src="/icons/up.svg" /></span>
-              <span v-else><img src="/icons/down.svg" /></span>
+              <img v-if="openIndex === 4" src="/icons/up.svg" />
+              <img v-else src="/icons/down.svg" />
             </span>
           </button>
 
@@ -195,7 +195,7 @@ const toggle = (i) => {
   list-style: none;
   padding: 0;
   gap: 16px;
-  transition: all 0.25s ease;
+  transition: all 0.3s ease;
 }
 .footer-list img {
   height: fit-content;
@@ -232,7 +232,7 @@ const toggle = (i) => {
   }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 579px) {
   .w-full {
     padding: 16px;
   }
@@ -260,10 +260,9 @@ const toggle = (i) => {
   }
 
   .footer-column.open .footer-list {
-    max-height: none;
+    max-height: 200px;
     opacity: 1;
     visibility: visible;
-    gap: 8px;
   }
 
   .footer-column.open {
