@@ -10,6 +10,7 @@
   <Hero />
   <FeaturedProducts />
   <NewsletterSignUp />
+  <Banner />
   <div style="padding-bottom: 50px">__</div>
 </template>
 

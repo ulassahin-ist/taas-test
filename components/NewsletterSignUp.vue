@@ -6,7 +6,7 @@
         <h2>Sign up to our newsletter</h2>
         <p>Be the first to hear about the latest offers.</p>
       </div>
-      <div class="subscribe grow flex center">
+      <div class="subscribe grow flex">
         <input type="text" placeholder="Your email address" />
         <button>SUBSCRIBE</button>
       </div>
@@ -70,7 +70,7 @@
 
 .subscribe button {
   border-radius: 4px;
-  padding: 16px;
+  padding: 16px 29px;
   background: var(--primary);
   color: var(--white);
   font-family: Roboto;
