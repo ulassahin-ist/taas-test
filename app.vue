@@ -6,9 +6,7 @@
 <template>
   <div>
     <Header />
-    <main class="wide-container">
-      <NuxtPage />
-    </main>
+    <NuxtPage />
   </div>
 </template>
 

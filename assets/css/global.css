@@ -1,86 +1,104 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+
 :root {
- 
-  --primary:#FF27AD;
-  --primary-dark: #F1129C;
-  --secondary:#0099A8;
-  --secondary-dark: #138A96;
+  --primary: #ff27ad;
+  --primary-dark: #f1129c;
+  --secondary: #0099a8;
+  --secondary-dark: #138a96;
 
   /* text-colors */
   --coal: #2a2a48;
   --coal-light: #2a2a4899;
   --graphene: #485363;
   --gray: #8493a8;
-  --smoke: #ECECEC80;
+  --smoke: #ececec80;
   --white: #fff;
 
   /* background-colors */
   --neutral: #ffffff;
   --dark-gray: #505357;
-  --darker-gray: #4B4B4B;
-  --titan-white: background: #F2F0FF;
-  --titan-gradient: background: linear-gradient(0deg, #F2F0FF, #F2F0FF), linear-gradient(87.81deg, #F2F0FF 35.04%, rgba(255, 255, 255, 0.67) 53.63%, rgba(252, 252, 255, 0.96) 64.78%, #F2F0FF 90.91%);
-  --teal-gradient: background: linear-gradient(0deg, rgba(19, 138, 150, 0.3), rgba(19, 138, 150, 0.3)), linear-gradient(88.28deg, rgba(16, 160, 174, 0.3) 14.56%, rgba(98, 214, 225, 0.3) 56.19%, rgba(21, 166, 181, 0.3) 98.69%);
+  --darker-gray: #4b4b4b;
+  --titan-white: #f2f0ff;
+  --titan-gradient: linear-gradient(
+      87.81deg,
+      #f2f0ff 35.04%,
+      rgba(255, 255, 255, 0.67) 53.63%,
+      rgba(252, 252, 255, 0.96) 64.78%,
+      #f2f0ff 90.91%
+    ),
+    linear-gradient(0deg, #f2f0ff, #f2f0ff);
 
-  --radius: 8px;
+  --teal-gradient: linear-gradient(
+      88.28deg,
+      rgba(16, 160, 174, 0.3) 14.56%,
+      rgba(98, 214, 225, 0.3) 56.19%,
+      rgba(21, 166, 181, 0.3) 98.69%
+    ),
+    linear-gradient(0deg, rgba(19, 138, 150, 0.3), rgba(19, 138, 150, 0.3));
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  text-decoration: none;
   font-family: Roboto, sans-serif;
   letter-spacing: 0;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* Remove default focus outlines (we’ll add custom if needed) */
 a:focus,
 button:focus {
   outline: none;
 }
 
-/* Unstyled button */
 button {
   all: unset;
-  display: inline-block; 
+  display: inline-block;
   cursor: pointer;
   box-sizing: inherit;
-    -webkit-appearance: none;
+  -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  gap: inherit;
   transition: 0.3s all ease;
 }
 
 body {
   background: var(--white);
-  color: (--text);
+  color: var(--coal);
 }
-.flex{
-    display: flex;
+
+.flex {
+  display: flex;
 }
-.column{
-    flex-direction: column;
+
+.column {
+  flex-direction: column;
 }
-.center{
-    justify-content: center;
-    align-items: center;
+
+.center {
+  justify-content: center;
+  align-items: center;
 }
-.grow{
+
+.grow {
   flex: 1;
 }
 
-.wide-container{
-     max-width: 1440px;
-     margin: auto;
+.wide-container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
 }
+
 .container {
   max-width: 1160px;
   width: 100%;
-  margin: 0 auto;  
+  margin: 0 auto;
 }

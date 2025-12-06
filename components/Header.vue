@@ -1,4 +1,3 @@
-<!-- components/Header.vue -->
 <template>
   <header class="header flex column">
     <div class="top-bar flex center">
@@ -13,9 +12,10 @@
         </div>
         <p>Watsons Beauty and Personal Care Awards Nominees!</p>
         <div class="part grow">
-          <button class="phone flex center">
+          <!-- Note: Not a button because it has no padding in figma/unmatching style-->
+          <div class="phone flex center">
             Call us:(+90) 850 123 45 67<img src="/icons/phone.svg" />
-          </button>
+          </div>
         </div>
       </div>
     </div>
@@ -44,7 +44,6 @@
     </div>
     <div class="menu flex container center">
       <button class="menu-item">CAMPAIGNS</button>
-
       <button class="menu-item">PERSONAL CARE</button>
       <button class="menu-item">SKIN CARE</button>
       <button class="menu-item">MAKE-UP</button>
@@ -60,59 +59,68 @@
 .header {
   box-shadow: 0px 4px 16px 0px #2a2a480a;
 }
+
 .top-bar {
   color: var(--white);
-  font-family: Roboto;
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
-  letter-spacing: 0px;
   text-align: center;
-  vertical-align: middle;
   background: var(--dark-gray);
   height: 40px;
   white-space: nowrap;
 }
+
 .top-bar .part {
   gap: 8px;
 }
+
 .top-bar .phone {
   gap: 8px;
-  justify-self: end;
   cursor: pointer;
+  float: right;
+  padding: 0;
 }
+
 .top-bar button {
   gap: 8px;
   padding: 0 16px;
   border-radius: 4px;
+  font-weight: 400;
 }
+
 .top-bar button:hover {
   background: var(--darker-gray);
 }
+
 .top-bar p {
   color: var(--smoke);
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
   text-align: center;
-  vertical-align: middle;
 }
+
 .mid-bar {
   height: 72px;
 }
+
 .mid-bar .logo {
   width: 146px;
 }
+
 .mid-bar .part {
   justify-content: end;
   gap: 20px;
 }
+
 .search {
   position: relative;
   display: flex;
   align-items: center;
   width: 560px;
 }
+
 .search-icon {
   position: absolute;
   left: 14px;
@@ -120,6 +128,7 @@
   height: 20px;
   pointer-events: none;
 }
+
 .search input {
   width: 100%;
   height: 42px;
@@ -128,45 +137,46 @@
   background: #ececec4d;
   padding-left: 44px;
   font-size: 14px;
-  font-family: Roboto;
 }
+
 .search input:focus {
   outline: 1px solid var(--gray);
 }
+
 .user {
-  font-family: Roboto;
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
   color: var(--gray);
   gap: 16px;
 }
+
 .user strong {
-  font-family: Roboto;
   font-weight: 500;
   color: var(--coal);
 }
+
 .avatar {
   border-radius: 50%;
   overflow: hidden;
 }
+
 .divider {
   width: 24px;
   height: 0.5px;
   transform: rotate(90deg);
   background: var(--smoke);
 }
+
 .menu {
   height: 48px;
   justify-content: space-between;
 }
+
 .menu-item {
-  font-family: Roboto;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 14px;
   line-height: 16px;
-  letter-spacing: 0px;
-  vertical-align: middle;
   text-align: center;
   text-transform: uppercase;
   padding: 16px;
@@ -175,6 +185,7 @@
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
 }
+
 .menu-item:hover {
   background: #ececec4d;
 }
