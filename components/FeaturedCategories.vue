@@ -6,25 +6,25 @@ const fetchedCategories = {
     id: 1,
     title: "Personal Care",
     description: "Lorem ipsum dolor sit amet consectetu elit aliquam",
-    thumb: "ft-1.png",
+    thumb: "/ft-1.png",
   },
   2: {
     id: 2,
     title: "Skin Care",
     description: "Lorem ipsum dolor sit amet consectetu elit aliquam",
-    thumb: "ft-2.png",
+    thumb: "/ft-2.png",
   },
   3: {
     id: 3,
     title: "Make-Up",
     description: "Lorem ipsum dolor sit amet consectetu elit aliquam",
-    thumb: "ft-3.png",
+    thumb: "/ft-3.png",
   },
   4: {
     id: 4,
     title: "Mother & Baby",
     description: "Lorem ipsum dolor sit amet consectetu elit aliquam",
-    thumb: "ft-4.png",
+    thumb: "/ft-4.png",
   },
 };
 </script>
