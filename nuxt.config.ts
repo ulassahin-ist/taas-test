@@ -2,6 +2,8 @@
 export default defineNuxtConfig({
   app: {
     baseURL: "/taas-test/",
+    cdnURL: "/taas-test/",
+    buildAssetsDir: "/_nuxt/",
   },
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
@@ -9,4 +11,5 @@ export default defineNuxtConfig({
   nitro: {
     preset: "static",
   },
+  ssr: false,
 });
