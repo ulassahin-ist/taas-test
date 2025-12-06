@@ -32,6 +32,7 @@ defineProps({
   border: 1px solid var(--smoke);
   overflow: hidden;
   box-shadow: 0px 1px 8px 0px #0000000a;
+  transition: all 0.15s ease-in-out;
 }
 .img-wrapper {
   position: absolute;
@@ -51,13 +52,13 @@ img {
 .body {
   padding: 16px;
   border-radius: var(--radius-md);
-
   background: #ffffffe5;
+  transition: all 0.15s ease-in-out;
 }
 .heading {
   font-weight: 700;
   font-size: 20px;
-  line-height: 24px;
+  line-height: 22px;
   text-align: center;
 }
 .text {
@@ -70,5 +71,13 @@ img {
 .btn-sc {
   width: fit-content;
   margin: 0 auto;
+}
+.item:hover {
+  border: 1px solid var(--smoke);
+  box-shadow: 0px 1px 8px 0px #0000000a, 0px 24px 24px 0px #0000000f,
+    0px -6px 30px 0px #0000000f;
+}
+.item:hover .body {
+  background: var(--white);
 }
 </style>
