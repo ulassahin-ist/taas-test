@@ -5,7 +5,7 @@
       <div class="img-wrapper disabled grow flex center">
         <img clas src="/icons/left.svg" alt="Left" />
       </div>
-      <!-- inner-wrapper could be a component itself but i lack data so i am skipping -->
+      <!-- inner-wrapper could be a component itself(HeroItem.vue) but i lack data so i am skipping -->
       <div class="inner-wrapper container flex center">
         <div class="part flex center">
           <div class="text-wrapper flex column">

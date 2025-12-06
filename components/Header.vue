@@ -37,7 +37,7 @@
         <div class="divider"></div>
         <img
           style="padding-bottom: 10px; cursor: pointer"
-          src="/icons/basket.svg"
+          src="/icons/basket-fill.svg"
           alt="Basket"
         />
       </div>
