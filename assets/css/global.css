@@ -75,12 +75,13 @@ button:focus {
 button {
   all: unset;
   display: inline-block;
-  cursor: pointer;
   box-sizing: inherit;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   transition: 0.3s all ease-in-out;
+
+  cursor: pointer;
 }
 
 body {
@@ -211,6 +212,35 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 14px;
+}
+.feature-title-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+.feature-title {
+  position: relative;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  color: var(--secondary);
+  padding: 0 32px;
+  background: white;
+  z-index: 1;
+}
+
+.feature-title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 153, 168, 0.1);
+  transform: translateY(-50%);
+  z-index: 0;
 }
 
 /* Section Containers */

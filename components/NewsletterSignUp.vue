@@ -52,7 +52,7 @@
   background: var(--white);
   font-size: 14px;
   padding: 16px;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   border: 1px solid #ececec;
 
   font-family: Roboto;

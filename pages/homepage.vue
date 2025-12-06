@@ -11,6 +11,7 @@
   <FeaturedProducts />
   <NewsletterSignUp />
   <Banner />
+  <FeaturedCategories />
   <div style="padding-bottom: 50px">__</div>
 </template>
 

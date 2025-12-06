@@ -80,7 +80,7 @@
 .top-bar button {
   gap: 8px;
   padding: 0 16px;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   font-weight: 400;
 }
 
@@ -122,7 +122,7 @@
 .search input {
   width: 100%;
   height: 42px;
-  border-radius: 32px;
+  border-radius: var(--radius-lg);
   border: none;
   background: #ececec4d;
   padding-left: 44px;

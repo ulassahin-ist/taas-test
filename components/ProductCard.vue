@@ -23,7 +23,7 @@ defineProps({
     </div>
 
     <div class="text-wrapper">
-      <div class="price w-full">{{ parseInt(product.price * 42) }}.99 TL</div>
+      <div class="price w-full">{{ parseInt(product.price * 42) }},99 TL</div>
       <p class="product-name w-full">{{ product.brand }} {{ product.title }}</p>
     </div>
   </div>
@@ -31,7 +31,7 @@ defineProps({
 
 <style scoped>
 .item {
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   border: 1px solid var(--smoke);
   box-shadow: 0px 1px 8px 0px #0000000a;
   flex: 1 1 25%;
@@ -76,7 +76,7 @@ defineProps({
   text-align: center;
   color: var(--white);
   padding: 0 16px;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   transition: background 0.15s ease-in-out;
 }
 .hover-buttons button:hover {
