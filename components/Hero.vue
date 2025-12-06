@@ -7,7 +7,7 @@
       </div>
       <!-- inner-wrapper could be a component itself(HeroItem.vue) but i lack data so i am skipping -->
       <div class="inner-wrapper container flex center">
-        <div class="part flex center">
+        <div class="column-2 flex center">
           <div class="text-wrapper flex column">
             <h4>NATURALS BY WATSONS</h4>
             <h2>The new 2021 collection</h2>
@@ -16,15 +16,15 @@
               moisturize and keep the hair looking smooth. Let your hair be
               flexible and fresh.
             </p>
-            <button class="text-margin">SHOP NOW</button>
-            <div class="pagination flex">
+            <button class="btn-primary text-margin">SHOP NOW</button>
+            <div class="pagination gap-8 flex">
               <img src="/icons/dotactive.svg" alt="Right" />
               <img src="/icons/dot.svg" alt="Right" />
               <img src="/icons/dot.svg" alt="Right" />
             </div>
           </div>
         </div>
-        <div class="part">
+        <div class="column-2">
           <img src="/hero-right.png" alt="Hero Image" />
         </div>
       </div>
@@ -55,20 +55,15 @@
   cursor: pointer;
 }
 
-.disabled {
-  cursor: default;
-  pointer-events: none;
-}
-
 .inner-wrapper {
   margin: 0;
 }
 
-.part {
+.column-2 {
   flex: 0 0 50%;
 }
 
-.part img {
+.column-2 img {
   width: 100%;
 }
 
@@ -97,23 +92,8 @@
   color: var(--graphene);
 }
 
-.text-wrapper button {
-  height: 32px;
-  border-radius: 4px;
-  padding-right: 16px;
-  padding-left: 16px;
-  background: var(--primary);
-  color: var(--white);
+.btn-primary {
   width: fit-content;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 16px;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.text-wrapper button:hover {
-  background: var(--primary-dark);
 }
 
 .text-margin {
@@ -121,7 +101,6 @@
 }
 
 .pagination {
-  gap: 8px;
   margin-top: 40px;
 }
 

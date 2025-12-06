@@ -2,7 +2,7 @@
   <header class="header flex column">
     <div class="top-bar flex center">
       <div class="container flex center">
-        <div class="part flex grow">
+        <div class="header-nav flex grow gap-8">
           <button name="stores" class="flex center">
             <img src="/icons/store.svg" />Stores
           </button>
@@ -11,9 +11,9 @@
           </button>
         </div>
         <p>Watsons Beauty and Personal Care Awards Nominees!</p>
-        <div class="part grow">
+        <div class="header-contact gap-8 grow">
           <!-- Note: Not a button because it has no padding in figma/unmatching style-->
-          <div class="phone flex center">
+          <div class="phone flex center gap-8">
             Call us:(+90) 850 123 45 67<img src="/icons/phone.svg" />
           </div>
         </div>
@@ -21,7 +21,7 @@
     </div>
     <div class="mid-bar flex center container">
       <img class="logo" src="/logo.png" alt="Logo" />
-      <div class="part grow flex center">
+      <div class="header-actions grow flex center flex-end gap-20">
         <div class="search">
           <img src="/icons/search.svg" class="search-icon" />
           <input
@@ -29,12 +29,12 @@
             placeholder="Write the product or category you are looking for"
           />
         </div>
-        <div class="user flex center">
+        <div class="user gap-16 flex center">
           <p>Hello, <strong>Clara Clara</strong></p>
           <img class="avatar" src="/avatar.png" alt="Avatar" />
           <img style="cursor: pointer" src="/icons/down.svg" alt="Drop" />
         </div>
-        <div class="divider"></div>
+        <div class="divider-vertical"></div>
         <img
           style="padding-bottom: 10px; cursor: pointer"
           src="/icons/basket-fill.svg"
@@ -71,12 +71,7 @@
   white-space: nowrap;
 }
 
-.top-bar .part {
-  gap: 8px;
-}
-
 .top-bar .phone {
-  gap: 8px;
   cursor: pointer;
   float: right;
   padding: 0;
@@ -107,11 +102,6 @@
 
 .mid-bar .logo {
   width: 146px;
-}
-
-.mid-bar .part {
-  justify-content: end;
-  gap: 20px;
 }
 
 .search {
@@ -148,7 +138,6 @@
   font-size: 14px;
   line-height: 24px;
   color: var(--gray);
-  gap: 16px;
 }
 
 .user strong {
@@ -159,13 +148,6 @@
 .avatar {
   border-radius: 50%;
   overflow: hidden;
-}
-
-.divider {
-  width: 24px;
-  height: 0.5px;
-  transform: rotate(90deg);
-  background: var(--smoke);
 }
 
 .menu {

@@ -9,22 +9,22 @@ defineProps({
 
 <template>
   <div class="item">
-    <div class="img-wrapper flex center full">
+    <div class="img-wrapper flex center w-full">
       <img :src="product.thumbnail" :alt="product.title" />
       <div class="hover-buttons flex center">
-        <button class="flex center">
+        <button class="gap-8 flex center">
           <img src="/icons/view.svg" alt="View" />Quick View
         </button>
-        <div class="divider"></div>
-        <button class="flex center">
+        <div class="divider-vertical"></div>
+        <button class="gap-8 flex center">
           <img src="/icons/basket.svg" alt="Basket" />Add
         </button>
       </div>
     </div>
 
     <div class="text-wrapper">
-      <div class="price full">{{ parseInt(product.price * 42) }}.99 TL</div>
-      <p class="product-name full">{{ product.brand }} {{ product.title }}</p>
+      <div class="price w-full">{{ parseInt(product.price * 42) }}.99 TL</div>
+      <p class="product-name w-full">{{ product.brand }} {{ product.title }}</p>
     </div>
   </div>
 </template>
@@ -41,10 +41,6 @@ defineProps({
   min-height: 0;
 }
 
-.full {
-  width: 100%;
-}
-
 .img-wrapper {
   padding: 16px;
   width: 100%;
@@ -59,13 +55,13 @@ defineProps({
   opacity: 0;
   bottom: -48px;
   transition: all 0.15s ease-in-out;
-  background: #000000cc;
+  background: var(--overlay-dark);
 }
 .item:hover .hover-buttons {
   opacity: 1;
   bottom: 0;
 }
-.divider {
+.divider-vertical {
   width: 24px;
   height: 0.5px;
   transform: rotate(90deg);
@@ -79,13 +75,12 @@ defineProps({
   letter-spacing: 0px;
   text-align: center;
   color: var(--white);
-  gap: 8px;
   padding: 0 16px;
   border-radius: 4px;
   transition: background 0.15s ease-in-out;
 }
 .hover-buttons button:hover {
-  background: #ffffff33;
+  background: var(--overlay-light);
 }
 .img-wrapper img {
   max-width: 100%;

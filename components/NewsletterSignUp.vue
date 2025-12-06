@@ -2,13 +2,13 @@
 <template>
   <section class="newsletter-su">
     <div class="main-wrapper container flex center">
-      <div class="text-wrapper grow flex column">
+      <div class="text-wrapper gap-16 grow flex column">
         <h2>Sign up to our newsletter</h2>
         <p>Be the first to hear about the latest offers.</p>
       </div>
-      <div class="subscribe grow flex">
+      <div class="subscribe gap-16 grow flex">
         <input type="text" placeholder="Your email address" />
-        <button>SUBSCRIBE</button>
+        <button class="btn-primary">SUBSCRIBE</button>
       </div>
     </div>
   </section>
@@ -24,7 +24,6 @@
 }
 .text-wrapper {
   max-width: 600px;
-  gap: 16px;
 }
 .text-wrapper h2 {
   font-family: Roboto;
@@ -68,19 +67,7 @@
   outline: 1px solid var(--gray);
 }
 
-.subscribe button {
-  border-radius: 4px;
+.btn-primary {
   padding: 16px 29px;
-  background: var(--primary);
-  color: var(--white);
-  font-family: Roboto;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 16px;
-  letter-spacing: 0px;
-  text-align: center;
-}
-.subscribe button:hover {
-  background-color: var(--primary-dark);
 }
 </style>

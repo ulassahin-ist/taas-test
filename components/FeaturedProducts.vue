@@ -9,7 +9,7 @@ const products = await getProducts(4);
       <div class="title">Featured products</div>
     </div>
 
-    <div class="products">
+    <div class="products gap-40">
       <ProductCard v-for="p in products" :key="p.id" :product="p" />
     </div>
   </div>
@@ -54,7 +54,6 @@ const products = await getProducts(4);
 .products {
   width: 100%;
   display: flex;
-  gap: 40px;
   align-items: stretch;
   height: 328px;
 }
