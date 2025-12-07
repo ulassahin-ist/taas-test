@@ -30,13 +30,26 @@
     ),
     linear-gradient(0deg, #f2f0ff, #f2f0ff);
 
+  --titan-light-gradient: linear-gradient(
+      163.21deg,
+      #f2f0ff 9.01%,
+      rgba(251, 251, 255, 0.88) 26.47%,
+      rgba(255, 255, 255, 0.85) 52.19%,
+      #f2f0ff 67.81%
+    ),
+    linear-gradient(0deg, #f2f0ff, #f2f0ff);
+
   --teal-gradient: linear-gradient(
+      0deg,
+      rgba(19, 138, 150, 0.3),
+      rgba(19, 138, 150, 0.3)
+    ),
+    linear-gradient(
       88.28deg,
       rgba(16, 160, 174, 0.3) 14.56%,
       rgba(98, 214, 225, 0.3) 56.19%,
       rgba(21, 166, 181, 0.3) 98.69%
-    ),
-    linear-gradient(0deg, rgba(19, 138, 150, 0.3), rgba(19, 138, 150, 0.3));
+    );
 
   /* heights */
   --height-sm: 40px;
@@ -67,6 +80,7 @@ html {
   padding: 0;
   width: 100dvw;
   overflow-x: hidden;
+  scrollbar-width: none;
 }
 body {
   margin: 0;
@@ -74,8 +88,8 @@ body {
   background: var(--white);
   color: var(--coal);
   width: 100dvw;
-  overflow-x: hidden;
 }
+
 a {
   text-decoration: none;
   color: inherit;
@@ -200,64 +214,6 @@ button {
   background: var(--secondary-dark);
 }
 
-/* Text Styling */
-.heading-xl {
-  font-family: Rubik;
-  font-weight: 700;
-  font-size: 48px;
-  line-height: 46px;
-}
-
-.heading-lg {
-  font-family: Rubik;
-  font-weight: 700;
-  font-size: 34px;
-  line-height: 38px;
-}
-
-.heading-md {
-  font-family: Roboto;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 28px;
-}
-
-.text-sm {
-  font-family: Roboto;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 14px;
-}
-.feature-title-wrapper {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 40px 0;
-}
-.feature-title {
-  position: relative;
-  font-family: Roboto;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 32px;
-  color: var(--secondary);
-  padding: 0 32px;
-  background: white;
-  z-index: 1;
-}
-
-.feature-title::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  height: 1px;
-  background: rgba(0, 153, 168, 0.1);
-  transform: translateY(-50%);
-  z-index: 0;
-}
-
 /* Section Containers */
 .wide-container {
   max-width: 1440px;
@@ -269,11 +225,4 @@ button {
   max-width: 1160px;
   width: 100%;
   margin: 0 auto;
-}
-
-@media (max-width: 1200px) {
-  /* Accounts for scrollbar width */
-  body {
-    padding-right: 16px;
-  }
 }

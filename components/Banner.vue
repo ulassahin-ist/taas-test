@@ -1,6 +1,7 @@
 <!-- components/Header.vue -->
 <template>
   <section class="banner flex center">
+    <!-- Used repositioning here and vue v-if in Hero.vue -->
     <img class="img1" src="/banner-1.png" alt="Brand" />
     <div class="body gap-12 flex column">
       <div class="top-texts w-full">
@@ -50,7 +51,33 @@
   border-bottom-right-radius: 40px;
   z-index: 3;
 }
+.heading-xl {
+  font-family: Rubik;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 46px;
+}
 
+.heading-lg {
+  font-family: Rubik;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 38px;
+}
+
+.heading-md {
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.text-sm {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 14px;
+}
 img {
   z-index: 4;
 }
@@ -63,5 +90,50 @@ img {
   position: absolute;
   top: 51px;
   transform: translateX(80%);
+}
+@media (max-width: 790px) {
+  .banner {
+    height: 514px;
+    flex-direction: column-reverse;
+  }
+  .body {
+    top: auto;
+    bottom: 32px;
+    padding: 32px;
+    gap: 12px;
+  }
+  .img1 {
+    top: auto;
+    /* near half width of .body for always being attached to center */
+    transform: translateX(110px);
+    height: 141px;
+    bottom: 17px;
+    margin: 0 auto;
+  }
+  .img2 {
+    top: 15px;
+    transform: translateX(0);
+    width: 250px;
+  }
+  .heading-xl {
+    font-size: 34px;
+    line-height: 48px;
+  }
+
+  .heading-lg {
+    font-size: 24px;
+    line-height: 32px;
+    width: 178px;
+  }
+
+  .heading-md {
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  .text-sm {
+    font-size: 14px;
+    line-height: 22px;
+  }
 }
 </style>

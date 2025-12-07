@@ -212,7 +212,7 @@ const toggle = (i) => {
 .socials img {
   cursor: pointer;
 }
-@media (min-width: 580px) {
+@media (min-width: 769px) {
   .footer-nav {
     flex-direction: row;
   }
@@ -232,7 +232,7 @@ const toggle = (i) => {
   }
 }
 
-@media (max-width: 579px) {
+@media (max-width: 768px) {
   .w-full {
     padding: 16px;
   }

@@ -1,7 +1,7 @@
 export const useProducts = () => {
-  const getProducts = async (limit) => {
+  const getProducts = async (limit, skip) => {
     const { data, error } = await useFetch(
-      `https://dummyjson.com/products?limit=${limit}`
+      `https://dummyjson.com/products?limit=${limit}&skip=${skip}`
     );
 
     if (error.value) {

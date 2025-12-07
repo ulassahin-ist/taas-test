@@ -80,4 +80,9 @@ img {
 .item:hover .body {
   background: var(--white);
 }
+@media (max-width: 579px) {
+  .item {
+    padding: 40px;
+  }
+}
 </style>

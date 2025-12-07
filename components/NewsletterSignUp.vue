@@ -1,10 +1,12 @@
 <!-- components/Header.vue -->
 <template>
   <section class="newsletter-su">
-    <div class="main-wrapper container flex center">
-      <div class="text-wrapper gap-16 grow flex column">
-        <h2>Sign up to our newsletter</h2>
-        <p>Be the first to hear about the latest offers.</p>
+    <div class="main-wrapper flex center">
+      <div class="text-wrapper grow flex column">
+        <div class="head-text">Sign up to our newsletter</div>
+        <div class="small-text">
+          Be the first to hear about the latest offers.
+        </div>
       </div>
       <div class="subscribe gap-16 grow flex">
         <input type="text" placeholder="Your email address" />
@@ -20,12 +22,15 @@
   background: var(--titan-white);
 }
 .main-wrapper {
-  padding: 40px 0;
+  margin: 0 auto;
+  max-width: 1240px;
+  padding: 40px;
 }
 .text-wrapper {
   max-width: 600px;
+  gap: 16px;
 }
-.text-wrapper h2 {
+.head-text {
   font-family: Roboto;
   font-weight: 700;
   font-size: 24px;
@@ -33,7 +38,7 @@
   letter-spacing: 0px;
   color: var(--coal);
 }
-.text-wrapper p {
+.small-text {
   font-family: Roboto;
   font-weight: 400;
   font-size: 16px;
@@ -69,5 +74,32 @@
 
 .btn-primary {
   padding: 16px 29px;
+}
+@media (max-width: 768px) {
+  .main-wrapper {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+  .text-wrapper {
+    gap: 8px;
+  }
+  .head-text {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .small-text {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .subscribe {
+    width: 100%;
+    max-width: none;
+  }
+  .subscribe input {
+    height: 48px;
+  }
 }
 </style>

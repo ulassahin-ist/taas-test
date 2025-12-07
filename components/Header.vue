@@ -10,11 +10,12 @@
             <img src="/icons/catalog.svg" />Catalog
           </button>
         </div>
-        <p>Watsons Beauty and Personal Care Awards Nominees!</p>
+        <p class="desktop">Watsons Beauty and Personal Care Awards Nominees!</p>
         <div class="header-contact gap-8 grow">
           <!-- Note: Not a button because it has no padding in figma/unmatching style-->
           <div class="phone flex center gap-8">
-            Call us:(+90) 850 123 45 67<img src="/icons/phone-white.svg" />
+            <div class="desktop">Call us:(+90) 850 123 45 67</div>
+            <img src="/icons/phone-white.svg" />
           </div>
         </div>
       </div>
@@ -25,11 +26,12 @@
         <div class="search">
           <img src="/icons/search.svg" class="search-icon" />
           <input
+            class="desktop"
             type="text"
             placeholder="Write the product or category you are looking for"
           />
         </div>
-        <div class="user gap-16 flex center">
+        <div class="user desktop gap-16 flex center">
           <p>Hello, <strong>Clara Clara</strong></p>
           <img class="avatar" src="/avatar.png" alt="Avatar" />
           <img style="cursor: pointer" src="/icons/down-light.svg" alt="Drop" />
@@ -40,13 +42,19 @@
           src="/icons/basket-fill.svg"
           alt="Basket"
         />
+        <img
+          class="mobile"
+          style="cursor: pointer"
+          src="/icons/hamburger.svg"
+          alt="Basket"
+        />
       </div>
     </div>
-    <div class="menu flex container center">
+    <div class="menu desktop flex container center">
       <button class="menu-item">CAMPAIGNS</button>
       <button class="menu-item">PERSONAL CARE</button>
       <button class="menu-item">SKIN CARE</button>
-      <button class="menu-item">MAKE-UP</button>
+      <button class="menu-item">MAKE - UP</button>
       <button class="menu-item">MOTHER & BABY</button>
       <button class="menu-item">MEN CARE</button>
       <button class="menu-item">HEALTHY LIFE</button>
@@ -170,5 +178,19 @@
 
 .menu-item:hover {
   background: #ececec4d;
+}
+.mobile {
+  display: none;
+}
+@media (max-width: 1000px) {
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+  .search {
+    width: fit-content;
+  }
 }
 </style>
