@@ -1,15 +1,30 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
 
 const openIndex = ref(null);
 const toggle = (i) => {
   openIndex.value = openIndex.value === i ? null : i;
 };
+
+const isMobile = ref(false);
+
+function updateSize() {
+  isMobile.value = window.innerWidth <= 768;
+}
+
+onMounted(() => {
+  updateSize();
+  window.addEventListener("resize", updateSize);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", updateSize);
+});
 </script>
 
 <template>
   <!-- Inconsistent caps casing kept for pixel perfect -->
-  <div class="w-full">
+  <div class="w-full page-pad">
     <div class="footer container flex column">
       <div class="footer-nav flex">
         <div
@@ -123,8 +138,10 @@ const toggle = (i) => {
       </div>
 
       <div class="copyright-socials flex center w-full">
-        <div class="copyright grow">
-          © Watsons 2021 all rıghts reserved | a member of ck hutchıson holdıngs
+        <div class="copyright">
+          © Watsons 2021 all rıghts reserved
+          <span v-if="!isMobile">|</span><span v-else><br /></span> a member of
+          ck hutchıson holdıngs
         </div>
         <div class="socials flex gap-24 center">
           <img src="/icons/facebook.svg" />
@@ -139,7 +156,7 @@ const toggle = (i) => {
 </template>
 
 <style scoped>
-.w-full {
+.page-pad {
   padding: 48px 0;
 }
 .footer {
@@ -233,7 +250,7 @@ const toggle = (i) => {
 }
 
 @media (max-width: 768px) {
-  .w-full {
+  .page-pad {
     padding: 16px;
   }
   .footer {

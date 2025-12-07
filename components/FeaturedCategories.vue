@@ -51,7 +51,8 @@ const fetchedCategories = {
 <style scoped>
 .container {
   max-width: 760px;
-  padding-bottom: 40px;
+  padding: 40px 0;
+  gap: 40px;
 }
 
 .feature-title-wrapper {
@@ -59,7 +60,6 @@ const fetchedCategories = {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 40px 0;
 }
 .title-back-line {
   position: absolute;
@@ -95,18 +95,15 @@ const fetchedCategories = {
 }
 @media (max-width: 579px) {
   .container {
-    padding-bottom: 0;
+    padding: 16px;
+    gap: 16px;
   }
   .categories {
     width: 100%;
     gap: 16px;
-    padding: 0 16px 16px 16px;
   }
   .category {
     flex: 1 1 100%;
-  }
-  .feature-title-wrapper {
-    padding: 16px;
   }
   .feature-title {
     font-size: 20px;
