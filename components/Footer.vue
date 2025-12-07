@@ -137,7 +137,7 @@ onBeforeUnmount(() => {
         </div>
       </div>
 
-      <div class="copyright-socials flex center w-full">
+      <div class="copyright-socials flex w-full">
         <div class="copyright">
           © Watsons 2021 all rıghts reserved
           <span v-if="!isMobile">|</span><span v-else><br /></span> a member of
@@ -217,7 +217,9 @@ onBeforeUnmount(() => {
 .footer-list img {
   height: fit-content;
 }
-
+.copyright-socials {
+  justify-content: space-between;
+}
 .copyright {
   font-weight: 500;
   font-size: 10px;

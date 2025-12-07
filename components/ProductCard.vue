@@ -17,7 +17,7 @@ defineProps({
         </button>
         <div class="divider-vertical"></div>
         <button class="gap-8 flex center">
-          <img src="/icons/basket.svg" alt="Basket" />Add
+          <img src="/icons/basket-white.svg" alt="Basket" />Add
         </button>
       </div>
     </div>
@@ -30,7 +30,7 @@ defineProps({
     </div>
     <div class="mobile-button mobile">
       <button class="btn-primary w-full flex center gap-8">
-        <img src="/icons/basket.svg" alt="View" />ADD
+        <img src="/icons/basket-white.svg" alt="View" />ADD
       </button>
     </div>
   </div>
@@ -50,6 +50,7 @@ defineProps({
   width: 100%;
   height: 48px;
   opacity: 0;
+  gap: 8px;
   bottom: -48px;
   transition: all 0.15s ease-in-out;
   background: var(--overlay-dark);

@@ -2,8 +2,8 @@
 <template>
   <section class="hero">
     <div class="main-wrapper wide-container flex">
-      <div class="img-wrapper desktop disabled grow flex center">
-        <img clas src="/icons/left.svg" alt="Left" />
+      <div class="nav-button-wrapper desktop disabled flex center">
+        <img class="nav-button" src="/icons/left-light.svg" alt="Left" />
       </div>
       <!-- inner-wrapper could be a component itself(HeroItem.vue) but i lack data so i am skipping -->
       <div class="inner-wrapper container flex center">
@@ -28,8 +28,8 @@
           <img v-else src="/hero.png" alt="Hero Image" />
         </div>
       </div>
-      <div class="img-wrapper desktop grow flex center">
-        <img src="/icons/right.svg" alt="Right" />
+      <div class="nav-button-wrapper desktop flex center">
+        <img class="nav-button" src="/icons/right.svg" alt="Right" />
       </div>
     </div>
   </section>
@@ -49,11 +49,16 @@
   align-items: center;
 }
 
-.img-wrapper {
+.nav-button-wrapper {
   width: 48px;
   height: 48px;
-  padding: 0;
+  border-radius: 50%;
   cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.nav-button-wrapper:hover:not(.disabled) {
+  background: #ececec;
 }
 
 .inner-wrapper {
@@ -164,6 +169,12 @@
   .pagination {
     margin-top: 24px;
     justify-content: center;
+  }
+}
+@media (max-width: 340px) {
+  .banner-wrapper img {
+    width: 100%;
+    height: auto;
   }
 }
 </style>
