@@ -67,9 +67,10 @@
 }
 .banner-wrapper {
   width: 100%;
+  max-height: 295px;
 }
 .banner-wrapper img {
-  height: 100%;
+  width: 100%;
 }
 
 .light-head-text {
@@ -131,6 +132,10 @@
   }
   .column-2 {
     padding: 16px;
+  }
+  .banner-wrapper img {
+    width: auto;
+    height: 100%;
   }
   .gap {
     margin-top: 16px;
