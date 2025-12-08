@@ -1,40 +1,33 @@
 <template>
   <main class="hub">
-    <!-- MOBILE VIEW: just 2 buttons, no iframes -->
-    <section v-if="isMobile" class="hub-mobile">
-      <h1 class="hub-mobile-title">Project screens</h1>
-      <p class="hub-mobile-subtitle">
-        Open each screen directly on your device.
+    <section class="hub-hero">
+      <div class="hub-tagline">PROJECT SCREENS</div>
+      <h1 class="hub-title">Pick a screen to explore</h1>
+      <p class="hub-subtitle">
+        Preview each flow inside a phone mockup, or tap to open the full screen.
       </p>
-
-      <div class="hub-mobile-buttons">
-        <NuxtLink to="/home" class="hub-mobile-button">
-          Go to Homepage
-        </NuxtLink>
-
-        <NuxtLink
-          to="/bonus"
-          class="hub-mobile-button hub-mobile-button--secondary"
-        >
-          Go to Bonus Screen
-        </NuxtLink>
-      </div>
     </section>
 
-    <section v-else class="hub-phones">
-      <NuxtLink to="/homepage" class="hub-phone-card">
+    <section class="hub-phones">
+      <!-- PHONE 1: HOMEPAGE -->
+      <NuxtLink to="/home" class="hub-phone-card">
         <div class="hub-phone-label">
           <span class="dot dot--primary"></span>
           <span>Homepage</span>
         </div>
 
         <div class="hub-phone-frame">
+          <!-- Phone PNG frame -->
+          <img
+            src="/phone-frame.png"
+            alt="Phone frame"
+            class="hub-phone-image"
+          />
+
+          <!-- Screen area where component is rendered -->
           <div class="hub-phone-screen">
-            <iframe
-              src="/homepage"
-              class="phone-iframe"
-              title="Homepage preview"
-            ></iframe>
+            <!-- Keep this as a lightweight visual preview -->
+            <HomePage />
           </div>
         </div>
 
@@ -52,12 +45,14 @@
         </div>
 
         <div class="hub-phone-frame">
+          <img
+            src="/phone-frame.png"
+            alt="Phone frame"
+            class="hub-phone-image"
+          />
+
           <div class="hub-phone-screen">
-            <iframe
-              src="/bonus"
-              class="phone-iframe"
-              title="Bonus preview"
-            ></iframe>
+            <BonusPage />
           </div>
         </div>
 
@@ -71,24 +66,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from "vue";
-
-const isMobile = ref(false);
-
-function updateIsMobile() {
-  if (typeof window === "undefined") return;
-  isMobile.value = window.innerWidth <= 768;
-}
-
-onMounted(() => {
-  updateIsMobile();
-  window.addEventListener("resize", updateIsMobile);
-});
-
-onBeforeUnmount(() => {
-  if (typeof window === "undefined") return;
-  window.removeEventListener("resize", updateIsMobile);
-});
+import HomePage from "~/components/HomePage.vue";
 </script>
 
 <style scoped>
@@ -101,69 +79,44 @@ onBeforeUnmount(() => {
   align-items: center;
 }
 
-/* ============ MOBILE VIEW (no iframes) ============ */
-.hub-mobile {
-  max-width: 480px;
-  width: 100%;
+/* HERO TEXT */
+.hub-hero {
   text-align: center;
+  max-width: 640px;
+  margin-bottom: 40px;
 }
 
-.hub-mobile-title {
+.hub-tagline {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 8px;
+}
+
+.hub-title {
   font-family: Rubik, sans-serif;
-  font-size: 28px;
-  line-height: 34px;
+  font-size: 32px;
+  line-height: 40px;
   font-weight: 700;
   color: var(--coal);
   margin-bottom: 8px;
 }
 
-.hub-mobile-subtitle {
+.hub-subtitle {
   font-size: 14px;
   line-height: 22px;
   color: var(--graphene);
-  margin-bottom: 24px;
 }
-
-.hub-mobile-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.hub-mobile-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 16px;
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 500;
-  text-decoration: none;
-  background: var(--primary);
-  color: var(--white);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-}
-
-.hub-mobile-button--secondary {
-  background: var(--secondary);
-}
-
-.hub-mobile-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
-}
-
-/* ============ DESKTOP VIEW ============ */
 
 /* PHONES GRID */
 .hub-phones {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 420px));
+  grid-template-columns: repeat(2, minmax(0, 320px));
   gap: 32px;
   justify-content: center;
   width: 100%;
-  max-width: 1400px;
+  max-width: 900px;
 }
 
 /* CARD AROUND EACH PHONE */
@@ -210,34 +163,42 @@ onBeforeUnmount(() => {
   background: var(--secondary);
 }
 
-/* PHONE MOCKUP: 375 x 667 with thin black frame */
+/* PHONE MOCKUP */
 .hub-phone-frame {
   position: relative;
-  width: 375px; /* fixed width */
-  height: 667px; /* fixed height */
+  width: 100%;
+  max-width: 280px;
   margin: 0 auto;
-  border-radius: 32px;
-  background: #000; /* thin black outer shell */
-  padding: 4px; /* very thin border */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  aspect-ratio: 9 / 19.5; /* approximate phone ratio */
 }
 
-/* Actual “screen” inside the phone */
-.hub-phone-screen {
+.hub-phone-image {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  border-radius: 26px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* Where the component is rendered inside the phone */
+.hub-phone-screen {
+  position: absolute;
+  /* tweak these to match your PNG's actual screen area */
+  top: 6%;
+  left: 8%;
+  right: 8%;
+  bottom: 6%;
+  border-radius: 24px;
   overflow: hidden;
   background: #ffffff;
 }
 
-/* Iframe content fills the screen */
-.phone-iframe {
+/* Ensure embedded components shrink nicely */
+.hub-phone-screen > * {
   width: 100%;
   height: 100%;
-  border: none;
+  display: block;
 }
 
 /* CARD FOOTER */
@@ -255,15 +216,24 @@ onBeforeUnmount(() => {
   height: 16px;
 }
 
-@media (max-width: 900px) {
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hub {
+    padding: 32px 16px 48px;
+  }
+
+  .hub-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
   .hub-phones {
     grid-template-columns: minmax(0, 1fr);
     gap: 24px;
   }
 
   .hub-phone-frame {
-    width: 340px;
-    height: calc(340px * 667 / 375);
+    max-width: 260px;
   }
 }
 </style>

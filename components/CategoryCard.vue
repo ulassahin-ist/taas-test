@@ -7,24 +7,24 @@ defineProps({
 });
 </script>
 <template>
-  <div class="item">
-    <div class="img-wrapper">
+  <div class="category-card">
+    <div class="category-card-image-wrapper">
       <img :src="category.thumb" alt="thumb" />
     </div>
-    <div class="body flex column gap-8">
-      <div class="heading">
+    <div class="category-card-content flex column gap-8">
+      <div class="category-card-title">
         {{ category.title }}
       </div>
-      <div class="text">
+      <div class="category-card-description">
         {{ category.description }}
       </div>
-      <button class="btn-sc">BROWSE</button>
+      <button class="btn-secondary">BROWSE</button>
     </div>
   </div>
 </template>
 
 <style scoped>
-.item {
+.category-card {
   position: relative;
   flex: 1;
   padding: 64px;
@@ -34,7 +34,7 @@ defineProps({
   box-shadow: 0px 1px 8px 0px #0000000a;
   transition: all 0.15s ease-in-out;
 }
-.img-wrapper {
+.category-card-image-wrapper {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -49,39 +49,39 @@ img {
   object-position: center;
   display: block;
 }
-.body {
+.category-card-content {
   padding: 16px;
   border-radius: var(--radius-md);
   background: #ffffffe5;
   transition: all 0.15s ease-in-out;
 }
-.heading {
+.category-card-title {
   font-weight: 700;
   font-size: 20px;
   line-height: 22px;
   text-align: center;
 }
-.text {
+.category-card-description {
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
   text-align: center;
   color: var(--graphene);
 }
-.btn-sc {
+.btn-secondary {
   width: fit-content;
   margin: 0 auto;
 }
-.item:hover {
+.category-card:hover {
   border: 1px solid var(--smoke);
   box-shadow: 0px 1px 8px 0px #0000000a, 0px 24px 24px 0px #0000000f,
     0px -6px 30px 0px #0000000f;
 }
-.item:hover .body {
+.category-card:hover .category-card-content {
   background: var(--white);
 }
 @media (max-width: 579px) {
-  .item {
+  .category-card {
     padding: 40px;
   }
 }

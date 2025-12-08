@@ -5,12 +5,14 @@
         figma already gives a fixed size so i skip some -->
 <template>
   <div>
-    <Header />
+    <Header v-if="route.path !== '/'" />
     <NuxtPage />
-    <Footer />
+    <Footer v-if="route.path !== '/'" />
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const route = useRoute();
+</script>
 
 <style></style>

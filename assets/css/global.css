@@ -204,7 +204,7 @@ button {
   background: var(--primary-dark);
 }
 
-.btn-sc {
+.btn-secondary {
   border-radius: var(--radius-sm);
   padding: 8px 16px;
   background: var(--secondary);
@@ -215,7 +215,7 @@ button {
   text-align: center;
 }
 
-.btn-sc:hover {
+.btn-secondary:hover {
   background: var(--secondary-dark);
 }
 

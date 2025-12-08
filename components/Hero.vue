@@ -1,4 +1,3 @@
-<!-- components/Header.vue -->
 <template>
   <section class="hero">
     <div class="main-wrapper wide-container flex">
@@ -7,22 +6,22 @@
       </div>
       <!-- inner-wrapper could be a component itself(HeroItem.vue) but i lack data so i am skipping -->
       <div class="inner-wrapper container flex center">
-        <div class="text-wrapper column-2 flex column">
-          <div class="light-head-text">NATURALS BY WATSONS</div>
-          <div class="head-text">The new 2021 collection</div>
-          <div class="text gap">
+        <div class="hero-text-content column-2 flex column">
+          <div class="hero-text-label">NATURALS BY WATSONS</div>
+          <div class="hero-text-title">The new 2021 collection</div>
+          <div class="hero-text-body gap">
             Known as "the miracle plant", Aloe Vera helps to nourish, moisturize
             and keep the hair looking smooth. Let your hair be flexible and
             fresh.
           </div>
           <button class="btn-primary gap">SHOP NOW</button>
-          <div class="pagination gap-8 flex">
+          <div class="hero-pagination gap-8 flex">
             <img class="active" src="/icons/dotactive.svg" alt="Right" />
             <img src="/icons/dot.svg" alt="Right" />
             <img src="/icons/dot.svg" alt="Right" />
           </div>
         </div>
-        <div class="banner-wrapper column-2 flex center">
+        <div class="hero-image-wrapper column-2 flex center">
           <!-- Used vue v-if here and repositioning in Banner.vue -->
           <img v-if="isMobile" src="/hero-mobile.png" alt="Hero Image" />
           <img v-else src="/hero.png" alt="Hero Image" />
@@ -70,15 +69,15 @@
 .column-2 {
   flex: 0 0 50%;
 }
-.banner-wrapper {
+.hero-image-wrapper {
   width: 100%;
   max-height: 295px;
 }
-.banner-wrapper img {
+.hero-image-wrapper img {
   width: 100%;
 }
 
-.light-head-text {
+.hero-text-label {
   color: var(--gray);
   font-weight: 600;
   font-family: Roboto;
@@ -86,7 +85,7 @@
   line-height: 16px;
 }
 
-.head-text {
+.hero-text-title {
   font-family: Rubik, sans-serif;
   font-weight: 700;
   font-size: 34px;
@@ -94,7 +93,7 @@
   color: var(--coal);
 }
 
-.text {
+.hero-text-body {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -109,16 +108,16 @@
   margin-top: 16px;
 }
 
-.pagination {
+.hero-pagination {
   margin-top: 40px;
   max-height: 8px;
   align-items: center;
 }
-.pagination img.active {
+.hero-pagination img.active {
   height: 8px;
   width: 8px;
 }
-.pagination img {
+.hero-pagination img {
   height: 6px;
   width: 6px;
   cursor: pointer;
@@ -138,7 +137,7 @@
   .column-2 {
     padding: 16px;
   }
-  .banner-wrapper img {
+  .hero-image-wrapper img {
     width: auto;
     height: 100%;
   }
@@ -146,18 +145,18 @@
     margin-top: 16px;
   }
 
-  .light-head-text {
+  .hero-text-label {
     font-size: 12px;
     line-height: 16px;
   }
 
-  .head-text {
+  .hero-text-title {
     font-size: 24px !important;
     line-height: 32px;
     letter-spacing: -0.2px;
   }
 
-  .text {
+  .hero-text-body {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
@@ -166,13 +165,13 @@
   .btn-primary {
     width: 100%;
   }
-  .pagination {
+  .hero-pagination {
     margin-top: 24px;
     justify-content: center;
   }
 }
 @media (max-width: 340px) {
-  .banner-wrapper img {
+  .hero-image-wrapper img {
     width: 100%;
     height: auto;
   }

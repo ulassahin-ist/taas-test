@@ -8,10 +8,10 @@ defineProps({
 </script>
 
 <template>
-  <div class="item">
-    <div class="img-wrapper flex center w-full">
+  <div class="product-card">
+    <div class="product-card-image-wrapper flex center w-full">
       <img :src="product.thumbnail" :alt="product.title" />
-      <div class="hover-buttons flex center desktop">
+      <div class="product-card-hover-actions flex center desktop">
         <button class="gap-8 flex center">
           <img src="/icons/view.svg" alt="View" />Quick View
         </button>
@@ -22,13 +22,16 @@ defineProps({
       </div>
     </div>
 
-    <div class="text-wrapper flex column">
-      <div class="price w-full">{{ parseInt(product.price * 42) }},99 TL</div>
-      <p class="product-name w-full">
-        {{ product.brand }}<br />{{ product.title }}
+    <div class="product-card-content flex column">
+      <div class="product-card-price w-full">
+        {{ parseInt(product.price * 42) }},99 TL
+      </div>
+      <p class="product-card-title w-full">
+        <!-- {{ product.brand }} -->
+        {{ product.description.slice(0, 47) }}...
       </p>
     </div>
-    <div class="mobile-button mobile">
+    <div class="product-card-mobile-action mobile">
       <button class="btn-primary w-full flex center gap-8">
         <img src="/icons/basket-white.svg" alt="View" />ADD
       </button>
@@ -37,7 +40,7 @@ defineProps({
 </template>
 
 <style scoped>
-.item {
+.product-card {
   border-radius: var(--radius-md);
   border: 1px solid var(--smoke);
   box-shadow: 0px 1px 8px 0px #0000000a;
@@ -45,7 +48,7 @@ defineProps({
   flex-direction: column;
 }
 
-.hover-buttons {
+.product-card-hover-actions {
   position: absolute;
   width: 100%;
   height: 48px;
@@ -55,11 +58,11 @@ defineProps({
   transition: all 0.15s ease-in-out;
   background: var(--overlay-dark);
 }
-.item:hover .hover-buttons {
+.product-card:hover .product-card-hover-actions {
   opacity: 1;
   bottom: 0;
 }
-.hover-buttons button {
+.product-card-hover-actions button {
   font-family: Roboto;
   font-weight: 500;
   font-size: 14px;
@@ -71,10 +74,10 @@ defineProps({
   border-radius: var(--radius-sm);
   transition: background 0.15s ease-in-out;
 }
-.hover-buttons button:hover {
+.product-card-hover-actions button:hover {
   background: var(--overlay-light);
 }
-.img-wrapper {
+.product-card-image-wrapper {
   padding: 16px;
   width: 100%;
   height: 184px;
@@ -82,27 +85,27 @@ defineProps({
   position: relative;
   background: #ececec29;
 }
-.img-wrapper img {
+.product-card-image-wrapper img {
   max-width: 100%;
   max-height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.text-wrapper {
+.product-card-content {
   padding: 32px;
   gap: 8px;
   flex: 1;
 }
 
-.price {
+.product-card-price {
   font-weight: 600;
   font-size: 19px;
   line-height: 24px;
   color: var(--coal);
 }
 
-.product-name {
+.product-card-title {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -111,7 +114,7 @@ defineProps({
 .mobile {
   display: none;
 }
-.mobile-button {
+.product-card-mobile-action {
   border-top: 1px solid var(--smoke);
   padding: 16px;
 }
@@ -120,17 +123,17 @@ defineProps({
   .desktop {
     display: none;
   }
-  .text-wrapper {
+  .product-card-content {
     padding: 16px;
   }
-  .img-wrapper {
+  .product-card-image-wrapper {
     height: 206px;
   }
-  .price {
+  .product-card-price {
     font-size: 16px;
     line-height: 14px;
   }
-  .product-name {
+  .product-card-title {
     font-size: 14px;
     line-height: 24px;
   }

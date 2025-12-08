@@ -37,14 +37,14 @@
 
         <div class="divider-vertical desktop"></div>
 
-        <div class="action-button mobile">
+        <div class="header-action-button mobile">
           <img src="/icons/search.svg" alt="Search" />
         </div>
-        <div class="action-button">
+        <div class="header-action-button">
           <img src="/icons/basket.svg" alt="Basket" />
-          <div class="basket-counter flex center">{{ basketCount }}</div>
+          <div class="header-basket-counter flex center">{{ basketCount }}</div>
         </div>
-        <div class="action-button mobile">
+        <div class="header-action-button mobile">
           <img
             style="cursor: pointer"
             src="/icons/hamburger.svg"
@@ -223,7 +223,7 @@
   outline: 1px solid var(--gray);
 }
 
-.action-button {
+.header-action-button {
   position: relative;
   height: 24px;
   width: 24px;
@@ -233,7 +233,7 @@
   cursor: pointer;
 }
 
-.basket-counter {
+.header-basket-counter {
   width: 16px;
   height: 16px;
   border-radius: 50%;
@@ -286,6 +286,7 @@
   cursor: pointer;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
+  white-space: nowrap;
 }
 
 .menu-item:hover {
@@ -298,7 +299,7 @@
 .menu-overlay {
   display: none;
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .header-top {
     padding: 8px 16px;
     height: 30px;
@@ -314,7 +315,7 @@
   .header-actions {
     gap: 32px;
   }
-  .action-button {
+  .header-action-button {
     display: flex !important;
     align-items: center;
     justify-content: center;

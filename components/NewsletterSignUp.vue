@@ -1,14 +1,14 @@
 <!-- components/Header.vue -->
 <template>
-  <section class="newsletter-su">
-    <div class="main-wrapper flex center">
-      <div class="text-wrapper grow flex column">
-        <div class="head-text">Sign up to our newsletter</div>
-        <div class="small-text">
+  <section class="newsletter-signup">
+    <div class="newsletter-content flex center">
+      <div class="newsletter-text-content grow flex column">
+        <div class="newsletter-text-title">Sign up to our newsletter</div>
+        <div class="newsletter-text-subtitle">
           Be the first to hear about the latest offers.
         </div>
       </div>
-      <div class="subscribe gap-16 grow flex">
+      <div class="newsletter-form gap-16 grow flex">
         <input type="text" placeholder="Your email address" />
         <button class="btn-primary">SUBSCRIBE</button>
       </div>
@@ -17,20 +17,20 @@
 </template>
 
 <style scoped>
-.newsletter-su {
+.newsletter-signup {
   width: 100%;
   background: var(--titan-white);
 }
-.main-wrapper {
+.newsletter-content {
   margin: 0 auto;
   max-width: 1240px;
   padding: 40px;
 }
-.text-wrapper {
+.newsletter-text-content {
   max-width: 600px;
   gap: 16px;
 }
-.head-text {
+.newsletter-text-title {
   font-family: Roboto;
   font-weight: 700;
   font-size: 24px;
@@ -38,7 +38,7 @@
   letter-spacing: 0px;
   color: var(--coal);
 }
-.small-text {
+.newsletter-text-subtitle {
   font-family: Roboto;
   font-weight: 400;
   font-size: 16px;
@@ -46,11 +46,11 @@
   letter-spacing: 0px;
   color: #2a2a4899;
 }
-.subscribe {
+.newsletter-form {
   max-width: 560px;
   gap: 16px;
 }
-.subscribe input {
+.newsletter-form input {
   width: 100%;
   height: 42px;
   border: none;
@@ -68,7 +68,7 @@
   vertical-align: middle;
 }
 
-.subscribe input:focus {
+.newsletter-form input:focus {
   outline: 1px solid var(--gray);
 }
 
@@ -76,29 +76,29 @@
   padding: 16px 29px;
 }
 @media (max-width: 768px) {
-  .main-wrapper {
+  .newsletter-content {
     align-items: flex-start;
     flex-direction: column;
     gap: 16px;
     padding: 16px;
   }
-  .text-wrapper {
+  .newsletter-text-content {
     gap: 8px;
   }
-  .head-text {
+  .newsletter-text-title {
     font-size: 20px;
     line-height: 24px;
   }
 
-  .small-text {
+  .newsletter-text-subtitle {
     font-size: 14px;
     line-height: 16px;
   }
-  .subscribe {
+  .newsletter-form {
     width: 100%;
     max-width: none;
   }
-  .subscribe input {
+  .newsletter-form input {
     height: 48px;
   }
 }

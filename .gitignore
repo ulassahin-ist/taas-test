@@ -18,6 +18,8 @@ logs
 .fleet
 .idea
 notes.txt
+/pages/index.vue
+
 # Local env files
 .env
 .env.*
