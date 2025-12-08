@@ -1,7 +1,7 @@
 
-
+aria labels
 SVG COLOR NAMING
 REMOVİNG GLOBAL UNNECESSARİES
-
+Check 30 40 opacity colors
 
 polish color control for opacity values

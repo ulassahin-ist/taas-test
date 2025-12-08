@@ -122,7 +122,7 @@ button {
 
   cursor: pointer;
 }
-
+textarea,
 input {
   background: var(--white);
   font-size: 14px;
@@ -130,13 +130,19 @@ input {
   border: 1px solid #ececec;
   font-size: 16px;
   line-height: 24px;
+  color: var(--coal-60);
 }
-
+textarea:focus,
 input:focus {
   outline: none;
   box-shadow: 0px 1px 2px 0px #37415114;
 }
 
+h2 {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+}
 /* Global Classes */
 .flex {
   display: flex;

@@ -92,9 +92,6 @@
   gap: 34px;
 }
 .checkout-title {
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 24px;
   padding: 4px 0 2px;
 }
 
