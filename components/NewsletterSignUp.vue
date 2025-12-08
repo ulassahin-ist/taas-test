@@ -59,23 +59,7 @@
   max-width: 412px;
   width: 100%;
   height: 48px;
-  border: none;
-  background: var(--white);
-  font-size: 14px;
   padding: 16px 16px 16px 17px;
-  border-radius: var(--radius-sm);
-  border: 1px solid #ececec;
-
-  font-family: Roboto;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0px;
-  vertical-align: middle;
-}
-
-.newsletter-form input:focus {
-  outline: 1px solid var(--gray);
 }
 
 .btn-primary {

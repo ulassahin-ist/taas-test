@@ -223,10 +223,6 @@
   font-size: 14px;
 }
 
-.search input:focus {
-  outline: 1px solid var(--gray);
-}
-
 .header-action-button {
   position: relative;
   height: 24px;

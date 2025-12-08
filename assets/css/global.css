@@ -5,13 +5,23 @@
   --primary-dark: #f1129c;
   --secondary: #0099a8;
   --secondary-dark: #138a96;
-
+  --snow: #fafcff;
+  --white-90: #ffffffe5;
+  --white-20: #ffffff33;
+  --black-80: #000000cc;
   /* text-colors */
   --coal: #2a2a48;
+  --coal-60: #2a2a4899;
   --coal-light: #2a2a4899;
   --graphene: #485363;
   --gray: #8493a8;
+  --gray-40: #8493a866;
+  --gray-dark: #505357;
+
   --smoke: #ececec80;
+  --smoke-50: #ececec80;
+  --smoke-30: #ececec4d;
+  --smoke-16: #ececec29;
   --white: #fff;
   --overlay-dark: #000000cc;
   --overlay-light: #ffffff33;
@@ -81,6 +91,10 @@ body {
   background: var(--white);
   color: var(--coal);
   width: 100dvw;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400px;
+  letter-spacing: 0;
 }
 html.no-scroll,
 body.no-scroll {
@@ -107,6 +121,20 @@ button {
   transition: 0.3s all ease-in-out;
 
   cursor: pointer;
+}
+
+input {
+  background: var(--white);
+  font-size: 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid #ececec;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0px 1px 2px 0px #37415114;
 }
 
 /* Global Classes */
