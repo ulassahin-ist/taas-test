@@ -1,15 +1,16 @@
 <!-- components/Header.vue -->
 <template>
   <section class="banner flex center">
-    <!-- Used repositioning here and vue v-if in Hero.vue -->
+    <!-- Used repositioning here instead of static images -->
     <img class="banner-image-left" src="/banner-1.png" alt="Brand" />
-    <div class="banner-content gap-12 flex column">
+    <div class="banner-content flex column">
       <div class="banner-text-group w-full">
+        <!-- I could not get why these texts were half Turkish but kept it for pixel perfect's sake -->
         <div class="banner-text-label w-full">EN SEVDİĞİNİZ ÜRÜNLER</div>
         <div class="banner-text-title w-full">TEK TIKLA KAPINIZDA!</div>
       </div>
       <div class="banner-text-group w-full">
-        <div class="banner-text-huge w-full">60%</div>
+        <div class="banner-text-huge w-full">60 %</div>
         <div class="banner-text-large w-full">DISCOUNT</div>
       </div>
       <div class="w-full">
@@ -21,11 +22,14 @@
 </template>
 
 <style scoped>
+/* IMPORTANT: 
+Here is a figma error by 5px that items collide with each other,
+to match by pixel i had to crop the error height from 400px to 395px*/
 .banner {
   position: relative;
   width: 100%;
   background: var(--teal-gradient);
-  height: 400px;
+  height: 395px;
   overflow: hidden;
   z-index: 1;
   color: #00106b;
@@ -45,11 +49,13 @@
 .banner-content {
   position: absolute;
   background: var(--white);
-  top: 51px;
+  bottom: 103px;
   padding: 32px;
   border-top-left-radius: 40px;
   border-bottom-right-radius: 40px;
   z-index: 3;
+  transform: translateX(-9px);
+  gap: 10px;
 }
 .banner-text-huge {
   font-family: Rubik;
@@ -69,7 +75,8 @@
   font-family: Roboto;
   font-weight: 700;
   font-size: 20px;
-  line-height: 28px;
+  line-height: 30px;
+  margin-top: 1px;
 }
 
 .banner-text-label {
@@ -83,13 +90,13 @@ img {
 }
 .banner-image-left {
   position: absolute;
-  top: 75px;
-  transform: translateX(-100%);
+  bottom: 33px;
+  transform: translateX(-270px);
 }
 .banner-image-right {
   position: absolute;
-  top: 51px;
-  transform: translateX(80%);
+  bottom: 55px;
+  transform: translateX(228px);
 }
 @media (max-width: 790px) {
   .banner {
@@ -97,22 +104,24 @@ img {
     flex-direction: column-reverse;
   }
   .banner-content {
+    width: 242px;
     top: auto;
     bottom: 32px;
     padding: 32px;
     gap: 12px;
+    transform: translateX(-12.5px);
   }
   .banner-image-left {
     top: auto;
     /* near half width of .banner-content for always being attached to center */
-    transform: translateX(110px);
+    transform: translateX(96px);
     height: 141px;
     bottom: 17px;
     margin: 0 auto;
   }
   .banner-image-right {
-    top: 15px;
-    transform: translateX(0);
+    top: 16px;
+    transform: translateX(-9px);
     width: 250px;
   }
   .banner-text-huge {

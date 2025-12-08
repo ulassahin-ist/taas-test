@@ -71,6 +71,7 @@
   }
   .featured-category-item {
     flex: 1 1 100%;
+    max-height: 232px;
   }
   .feature-title {
     font-size: 20px;

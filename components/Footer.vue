@@ -1,25 +1,10 @@
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from "vue";
+import { ref } from "vue";
 
-const openIndex = ref(null);
+const activeColumnIndex = ref(null);
 const toggle = (i) => {
-  openIndex.value = openIndex.value === i ? null : i;
+  activeColumnIndex.value = activeColumnIndex.value === i ? null : i;
 };
-
-const isMobile = ref(false);
-
-function updateSize() {
-  isMobile.value = window.innerWidth <= 768;
-}
-
-onMounted(() => {
-  updateSize();
-  window.addEventListener("resize", updateSize);
-});
-
-onBeforeUnmount(() => {
-  window.removeEventListener("resize", updateSize);
-});
 </script>
 
 <template>
@@ -29,12 +14,12 @@ onBeforeUnmount(() => {
       <div class="footer-nav flex">
         <div
           class="footer-column flex column"
-          :class="{ open: openIndex === 0 }"
+          :class="{ open: activeColumnIndex === 0 }"
         >
           <button class="footer-toggle" @click="toggle(0)">
             <span class="footer-heading">CORPORATE</span>
             <span class="footer-toggle-icon">
-              <img v-if="openIndex === 0" src="/icons/up.svg" />
+              <img v-if="activeColumnIndex === 0" src="/icons/up.svg" />
               <img v-else src="/icons/down.svg" />
             </span>
           </button>
@@ -49,12 +34,12 @@ onBeforeUnmount(() => {
 
         <div
           class="footer-column flex column"
-          :class="{ open: openIndex === 1 }"
+          :class="{ open: activeColumnIndex === 1 }"
         >
           <button class="footer-toggle" @click="toggle(1)">
             <span class="footer-heading">SHOPPING</span>
             <span class="footer-toggle-icon">
-              <img v-if="openIndex === 1" src="/icons/up.svg" />
+              <img v-if="activeColumnIndex === 1" src="/icons/up.svg" />
               <img v-else src="/icons/down.svg" />
             </span>
           </button>
@@ -69,12 +54,12 @@ onBeforeUnmount(() => {
 
         <div
           class="footer-column flex column"
-          :class="{ open: openIndex === 2 }"
+          :class="{ open: activeColumnIndex === 2 }"
         >
           <button class="footer-toggle" @click="toggle(2)">
             <span class="footer-heading">LEGAL</span>
             <span class="footer-toggle-icon">
-              <img v-if="openIndex === 2" src="/icons/up.svg" />
+              <img v-if="activeColumnIndex === 2" src="/icons/up.svg" />
               <img v-else src="/icons/down.svg" />
             </span>
           </button>
@@ -82,19 +67,19 @@ onBeforeUnmount(() => {
           <ul class="footer-list flex column">
             <li><a href="#">Terms of Use</a></li>
             <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Memebership Agreement</a></li>
+            <li><a href="#">Membership Agreement</a></li>
             <li><a href="#">Distance Selling Contract</a></li>
           </ul>
         </div>
 
         <div
           class="footer-column flex column"
-          :class="{ open: openIndex === 3 }"
+          :class="{ open: activeColumnIndex === 3 }"
         >
           <button class="footer-toggle" @click="toggle(3)">
             <span class="footer-heading">HELP CENTER</span>
             <span class="footer-toggle-icon">
-              <img v-if="openIndex === 3" src="/icons/up.svg" />
+              <img v-if="activeColumnIndex === 3" src="/icons/up.svg" />
               <img v-else src="/icons/down.svg" />
             </span>
           </button>
@@ -107,12 +92,12 @@ onBeforeUnmount(() => {
 
         <div
           class="footer-column flex column"
-          :class="{ open: openIndex === 4 }"
+          :class="{ open: activeColumnIndex === 4 }"
         >
           <button class="footer-toggle" @click="toggle(4)">
             <span class="footer-heading">CONTACT US</span>
             <span class="footer-toggle-icon">
-              <img v-if="openIndex === 4" src="/icons/up.svg" />
+              <img v-if="activeColumnIndex === 4" src="/icons/up.svg" />
               <img v-else src="/icons/down.svg" />
             </span>
           </button>
@@ -139,9 +124,9 @@ onBeforeUnmount(() => {
 
       <div class="copyright-socials flex w-full">
         <div class="copyright">
-          © Watsons 2021 all rıghts reserved
-          <span v-if="!isMobile">|</span><span v-else><br /></span> a member of
-          ck hutchıson holdıngs
+          <span>© Watsons 2021 all rıghts reserved</span>
+          <div class="desktop">&nbsp;|&nbsp;</div>
+          <span>a member of ck hutchıson holdıngs</span>
         </div>
         <div class="socials flex gap-24 center">
           <img src="/icons/facebook.svg" />
@@ -158,6 +143,7 @@ onBeforeUnmount(() => {
 <style scoped>
 .page-pad {
   padding: 48px 0;
+  height: 320px;
 }
 .footer {
   gap: 32px;
@@ -183,8 +169,8 @@ onBeforeUnmount(() => {
 }
 
 .footer-column {
-  flex: 1;
-  gap: 32px;
+  gap: 30px;
+  width: 160px;
 }
 
 .footer-toggle {
@@ -193,14 +179,14 @@ onBeforeUnmount(() => {
   border: none;
   display: flex;
   justify-content: space-between;
-  padding: 0;
+  padding-right: 0;
   cursor: pointer;
 }
 
 .footer-heading {
   font-weight: 500;
   font-size: 12px;
-  line-height: 16px;
+  line-height: 20px;
 }
 
 .footer-toggle-icon {
@@ -227,15 +213,26 @@ onBeforeUnmount(() => {
   letter-spacing: 0px;
   text-transform: uppercase;
   color: var(--gray);
+  display: flex;
+  align-items: center;
 }
+
 .socials img {
   cursor: pointer;
 }
 @media (min-width: 769px) {
+  .mobile {
+    display: none;
+  }
+  .page-pad {
+    height: auto;
+  }
   .footer-nav {
     flex-direction: row;
   }
-
+  .footer-nav .footer-column:last-child {
+    width: 360px;
+  }
   .footer-list {
     max-height: none !important;
     opacity: 1 !important;
@@ -252,24 +249,27 @@ onBeforeUnmount(() => {
 }
 
 @media (max-width: 768px) {
+  .desktop {
+    display: none;
+  }
   .page-pad {
     padding: 16px;
   }
   .footer {
-    gap: 24px;
+    gap: 28px;
   }
   .footer-nav {
     flex-direction: column;
     gap: 16px;
   }
   .footer-toggle {
-    padding: 4px 0;
+    padding: 4px 4px 4px 0;
   }
   .footer-column {
-    gap: 8px;
+    gap: 2px;
     border-bottom: 1px solid var(--smoke);
+    width: 100%;
   }
-
   .footer-list {
     max-height: 0;
     overflow: hidden;
@@ -290,8 +290,12 @@ onBeforeUnmount(() => {
   }
 
   .copyright {
-    text-align: center;
+    flex-direction: column;
+    gap: 0;
+    justify-content: center;
+    align-items: center;
   }
+
   .copyright-socials {
     flex-direction: column-reverse;
     gap: 24px;

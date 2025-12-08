@@ -1,8 +1,9 @@
 <template>
   <section class="hero">
     <div class="main-wrapper wide-container flex">
+      <!-- Styling error!! Left button is 64px from the center container and right is 80px -->
       <div class="nav-button-wrapper desktop disabled flex center">
-        <img class="nav-button" src="/icons/left-light.svg" alt="Left" />
+        <img class="nav-button.left" src="/icons/left-light.svg" alt="Left" />
       </div>
       <!-- inner-wrapper could be a component itself(HeroItem.vue) but i lack data so i am skipping -->
       <div class="inner-wrapper container flex center">
@@ -22,9 +23,10 @@
           </div>
         </div>
         <div class="hero-image-wrapper column-2 flex center">
-          <!-- Used vue v-if here and repositioning in Banner.vue -->
-          <img v-if="isMobile" src="/hero-mobile.png" alt="Hero Image" />
-          <img v-else src="/hero.png" alt="Hero Image" />
+          <picture>
+            <source media="(max-width: 768px)" srcset="/hero-mobile.png" />
+            <img src="/hero.png" alt="Hero Image" />
+          </picture>
         </div>
       </div>
       <div class="nav-button-wrapper desktop flex center">
@@ -60,6 +62,9 @@
   background: #ececec;
 }
 
+.nav-button-wrapper:first-child {
+  transform: translateX(15px);
+}
 .inner-wrapper {
   margin: 0;
   max-height: 100%;
@@ -177,22 +182,3 @@
   }
 }
 </style>
-
-<script setup>
-import { ref, onMounted, onBeforeUnmount } from "vue";
-
-const isMobile = ref(false);
-
-function updateSize() {
-  isMobile.value = window.innerWidth <= 768;
-}
-
-onMounted(() => {
-  updateSize();
-  window.addEventListener("resize", updateSize);
-});
-
-onBeforeUnmount(() => {
-  window.removeEventListener("resize", updateSize);
-});
-</script>

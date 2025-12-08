@@ -30,7 +30,7 @@
           />
         </div>
         <div class="user desktop flex center">
-          <p>Hello, <strong>Clara Clara</strong></p>
+          <p>Hello,&nbsp;<strong>Clara Clara</strong></p>
           <img class="avatar" src="/avatar.png" alt="Avatar" />
           <img style="cursor: pointer" src="/icons/down-light.svg" alt="Drop" />
         </div>
@@ -42,6 +42,7 @@
         </div>
         <div class="header-action-button">
           <img src="/icons/basket.svg" alt="Basket" />
+          <div class="desktop" style="color: white">.</div>
           <div class="header-basket-counter flex center">{{ basketCount }}</div>
         </div>
         <div class="header-action-button mobile">
@@ -169,6 +170,8 @@
   border-radius: var(--radius-sm);
   font-weight: 400;
   letter-spacing: 0.17px;
+  font-size: 14px;
+  line-height: 24px;
 }
 
 .header-top button:hover {
@@ -191,7 +194,7 @@
   width: 146px;
 }
 .header-actions {
-  gap: 24px;
+  gap: 25.5px;
 }
 .search {
   position: relative;
@@ -203,9 +206,9 @@
 
 .search-icon {
   position: absolute;
-  left: 14px;
-  width: 20px;
-  height: 20px;
+  left: 10px;
+  width: 24px;
+  height: 24px;
   pointer-events: none;
 }
 
@@ -215,7 +218,8 @@
   border-radius: var(--radius-lg);
   border: none;
   background: #ececec4d;
-  padding-left: 44px;
+  color: #8493a8;
+  padding-left: 43px;
   font-size: 14px;
 }
 
@@ -245,7 +249,7 @@
   text-align: center;
   font-weight: 600;
   position: absolute;
-  right: -3px;
+  right: -1px;
   top: -9px;
 }
 
@@ -254,8 +258,11 @@
   font-size: 14px;
   line-height: 24px;
   color: var(--gray);
-  gap: 16px;
+  gap: 17px;
   white-space: nowrap;
+}
+.user p {
+  letter-spacing: -0.1px;
 }
 
 .user strong {
@@ -266,6 +273,8 @@
 .avatar {
   border-radius: 50%;
   overflow: hidden;
+  width: 33px;
+  outline: 1px solid var(--white);
 }
 
 .menu {
@@ -302,7 +311,7 @@
 @media (max-width: 900px) {
   .header-top {
     padding: 8px 16px;
-    height: 30px;
+    height: 32px;
   }
   .header-main {
     padding: 16px;
@@ -313,7 +322,7 @@
     width: 120px;
   }
   .header-actions {
-    gap: 32px;
+    gap: 40px;
   }
   .header-action-button {
     display: flex !important;

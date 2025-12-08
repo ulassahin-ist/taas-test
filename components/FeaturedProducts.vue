@@ -1,7 +1,6 @@
 <script setup>
 const { getProducts } = useProducts();
 const products = await getProducts(4, 3);
-console.log(products);
 </script>
 
 <template>
@@ -12,7 +11,14 @@ console.log(products);
     </div>
 
     <div class="featured-products-grid">
+      <div
+        v-if="products.length < 1"
+        class="featured-products-loading"
+        v-for="i in 4"
+        :key="i"
+      ></div>
       <ProductCard
+        v-else
         class="featured-product-item"
         v-for="p in products"
         :key="p.id"
@@ -64,6 +70,24 @@ console.log(products);
   top: 50%;
   transform: translateY(-50%);
 }
+
+.featured-products-loading {
+  flex: 1;
+  border: 1px solid var(--smoke);
+  border-radius: var(--radius-md);
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
 @media (max-width: 1100px) {
   .featured-products-grid {
     flex-wrap: wrap;

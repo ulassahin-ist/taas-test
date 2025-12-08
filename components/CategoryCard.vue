@@ -11,7 +11,7 @@ defineProps({
     <div class="category-card-image-wrapper">
       <img :src="category.thumb" alt="thumb" />
     </div>
-    <div class="category-card-content flex column gap-8">
+    <div class="category-card-content flex column">
       <div class="category-card-title">
         {{ category.title }}
       </div>
@@ -54,6 +54,7 @@ img {
   border-radius: var(--radius-md);
   background: #ffffffe5;
   transition: all 0.15s ease-in-out;
+  gap: 7.5px;
 }
 .category-card-title {
   font-weight: 700;
@@ -64,7 +65,7 @@ img {
 .category-card-description {
   font-weight: 400;
   font-size: 14px;
-  line-height: 24px;
+  line-height: 25px;
   text-align: center;
   color: var(--graphene);
 }

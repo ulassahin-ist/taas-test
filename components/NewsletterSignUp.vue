@@ -2,13 +2,13 @@
 <template>
   <section class="newsletter-signup">
     <div class="newsletter-content flex center">
-      <div class="newsletter-text-content grow flex column">
+      <div class="newsletter-text-content grow flex column column-2">
         <div class="newsletter-text-title">Sign up to our newsletter</div>
         <div class="newsletter-text-subtitle">
           Be the first to hear about the latest offers.
         </div>
       </div>
-      <div class="newsletter-form gap-16 grow flex">
+      <div class="newsletter-form gap-16 grow flex column-2">
         <input type="text" placeholder="Your email address" />
         <button class="btn-primary">SUBSCRIBE</button>
       </div>
@@ -25,6 +25,9 @@
   margin: 0 auto;
   max-width: 1240px;
   padding: 40px;
+}
+.column-2 {
+  padding: 0 2px;
 }
 .newsletter-text-content {
   max-width: 600px;
@@ -49,14 +52,17 @@
 .newsletter-form {
   max-width: 560px;
   gap: 16px;
+  padding: 1px;
+  justify-content: flex-end;
 }
 .newsletter-form input {
+  max-width: 412px;
   width: 100%;
-  height: 42px;
+  height: 48px;
   border: none;
   background: var(--white);
   font-size: 14px;
-  padding: 16px;
+  padding: 16px 16px 16px 17px;
   border-radius: var(--radius-sm);
   border: 1px solid #ececec;
 
@@ -82,6 +88,9 @@
     gap: 16px;
     padding: 16px;
   }
+  .column-2 {
+    padding: 0;
+  }
   .newsletter-text-content {
     gap: 8px;
   }
@@ -98,8 +107,8 @@
     width: 100%;
     max-width: none;
   }
-  .newsletter-form input {
-    height: 48px;
+  .btn-primary {
+    padding: 8px 16px;
   }
 }
 </style>

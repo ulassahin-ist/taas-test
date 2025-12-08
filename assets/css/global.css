@@ -51,17 +51,10 @@
       rgba(21, 166, 181, 0.3) 98.69%
     );
 
-  /* heights */
-  --height-sm: 40px;
-  --height-md: 42px;
-  --height-lg: 48px;
-  --height-xl: 72px;
-
   /* radius */
   --radius-sm: 4px;
   --radius-md: 6px;
   --radius-lg: 32px;
-  --radius-xl: 40px;
 }
 
 * {
@@ -153,23 +146,17 @@ button {
 .gap-8 {
   gap: 8px;
 }
+
 .gap-12 {
   gap: 12px;
 }
+
 .gap-16 {
   gap: 16px;
 }
-.gap-20 {
-  gap: 20px;
-}
+
 .gap-24 {
   gap: 24px;
-}
-.gap-32 {
-  gap: 32px;
-}
-.gap-40 {
-  gap: 40px;
 }
 
 /* Divider */

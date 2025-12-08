@@ -116,7 +116,7 @@ defineProps({
 }
 .product-card-mobile-action {
   border-top: 1px solid var(--smoke);
-  padding: 16px;
+  padding: 18px 15px 14px;
 }
 
 @media (max-width: 768px) {
@@ -124,7 +124,7 @@ defineProps({
     display: none;
   }
   .product-card-content {
-    padding: 16px;
+    padding: 18px 16px 14px;
   }
   .product-card-image-wrapper {
     height: 206px;
