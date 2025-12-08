@@ -13,8 +13,9 @@
 
     <div class="checkout-content container flex">
       <div class="checkout-form-column">
-        <form class="checkout-form" novalidate>
+        <form class="checkout-form flex column" novalidate>
           <ShippingDetails />
+          <PaymentDetails class="payment-details" />
         </form>
       </div>
 
@@ -59,6 +60,17 @@
 .checkout-form-column {
   flex: 1;
 }
+.checkout-form {
+  gap: 32px;
+}
 .checkout-summary-column {
+}
+.payment-details {
+  height: auto;
+}
+.payment-form-note {
+  color: var(--gray);
+  font-size: 14px;
+  line-height: 24px;
 }
 </style>
