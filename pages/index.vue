@@ -137,8 +137,11 @@
   letter-spacing: 0.5px;
   line-height: 20px;
   font-size: 14px;
+  color: var(--gray);
 }
-
+strong {
+  color: var(--graphene);
+}
 .inline-logo {
   height: 12px;
 }
