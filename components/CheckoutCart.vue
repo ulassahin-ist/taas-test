@@ -1,5 +1,5 @@
 <template>
-  <section class="checkout-cart-section grow flex column">
+  <section class="checkout-cart-section flex column">
     <h2 class="checkout-title">Shopping cart summary</h2>
 
     <div class="checkout-cart flex column">
@@ -98,7 +98,8 @@
 .checkout-cart {
   outline: 1.5px solid var(--smoke);
   box-shadow: 0px 4px 16px 0px #2a2a480a;
-  width: 360px;
+  width: 100%;
+  max-width: 360px;
   /* 
   height: 465; */
   padding: 24px;
@@ -209,6 +210,21 @@
   font-size: 20px;
   line-height: 24px;
 }
-@media (max-width: 1500px) {
+@media (max-width: 480px) {
+  .checkout-cart-section {
+    padding: 16px 16px 15px;
+    gap: 19px;
+  }
+  .checkout-cart {
+    outline: none;
+    box-shadow: none;
+    max-width: 100%;
+    gap: 16px;
+    border-radius: var(--radius-md);
+    padding: 0px;
+  }
+  .checkout-cart-image-wrapper {
+    padding: 16px;
+  }
 }
 </style>

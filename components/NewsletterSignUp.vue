@@ -10,6 +10,7 @@
       </div>
       <div class="newsletter-form gap-16 grow flex column-2">
         <input type="text" placeholder="Your email address" />
+        <!-- This button is overflowing to outer container -->
         <button class="btn-primary">SUBSCRIBE</button>
       </div>
     </div>
@@ -64,6 +65,8 @@
 
 .btn-primary {
   padding: 16px 29px;
+  /* the reason is button overflow to outer container */
+  transform: translateX(3px);
 }
 @media (max-width: 768px) {
   .newsletter-content {
@@ -93,6 +96,7 @@
   }
   .btn-primary {
     padding: 8px 16px;
+    transform: translateX(0);
   }
 }
 </style>

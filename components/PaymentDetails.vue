@@ -135,7 +135,7 @@
 .payment-form-note {
   color: var(--gray);
   font-size: 14px;
-  line-height: 24px;
+  line-height: 26px;
 }
 
 .payment-details-image {
@@ -144,5 +144,34 @@
 }
 .payment-details-image img {
   width: 100%;
+}
+@media (max-width: 768px) {
+  .payment-details-image {
+    flex: 1 1 0;
+  }
+}
+@media (max-width: 480px) {
+  .payment-details {
+    gap: 0;
+  }
+  .payment-details-title {
+    padding: 16px;
+    background: var(--smoke-30);
+  }
+  .payment-details-content {
+    padding: 16px;
+    flex-wrap: nowrap;
+    flex-direction: column-reverse;
+    gap: 17px;
+  }
+  .payment-details-image {
+    max-width: none;
+    width: 100%;
+    flex-shrink: 1;
+    max-height: 215px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 </style>

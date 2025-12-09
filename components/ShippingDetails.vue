@@ -214,4 +214,18 @@
   padding: 16px;
   height: 123px;
 }
+@media (max-width: 480px) {
+  .shipping-details-section {
+    gap: 0;
+  }
+  .shipping-details-title {
+    padding: 16px;
+    background: var(--smoke-30);
+  }
+  .shipping-details-content {
+    padding: 16px;
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+}
 </style>

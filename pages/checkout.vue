@@ -7,7 +7,7 @@
           Cart<img src="/icons/right-breadcrumb.svg" alt="&gt;" />
           <span class="checkout-text-label-highlight">Checkout</span>
         </div>
-        <h1 class="breadcrumb-checkout-title">Checkout</h1>
+        <div class="breadcrumb-checkout-title">Checkout</div>
       </div>
     </div>
 
@@ -16,6 +16,12 @@
         <form class="checkout-form flex column" novalidate>
           <ShippingDetails />
           <PaymentDetails class="payment-details" />
+          <!-- Why is here a second required fields here 
+           i don't know but keeping it to match pixel perfect -->
+          <span class="payment-form-note desktop">* Required fields</span>
+          <div class="checkout-button-wrapper flex w-full">
+            <button class="btn-primary disabled">PAY NOW</button>
+          </div>
         </form>
       </div>
 
@@ -24,9 +30,15 @@
       </aside>
     </div>
   </main>
+  <div class="divider"></div>
 </template>
 
 <style scoped>
+.divider {
+  height: 1px;
+  width: 100%;
+  background: var(--smoke);
+}
 .checkout-section {
   background: #ffffff;
 }
@@ -63,14 +75,74 @@
 .checkout-form {
   gap: 32px;
 }
-.checkout-summary-column {
-}
+
 .payment-details {
   height: auto;
 }
 .payment-form-note {
   color: var(--gray);
   font-size: 14px;
-  line-height: 24px;
+  line-height: 20px;
+}
+.btn-primary {
+  width: 100%;
+  max-width: 360px;
+}
+@media (max-width: 1060px) {
+  .checkout-content,
+  .checkout-breadcrumb {
+    padding: 32px 32px;
+  }
+  .checkout-content {
+    width: 100%;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .btn-primary {
+    max-width: none;
+  }
+}
+@media (max-width: 768px) {
+  .checkout-content,
+  .checkout-breadcrumb {
+    padding: 16px 16px;
+  }
+}
+@media (max-width: 480px) {
+  .desktop {
+    display: none;
+  }
+  .checkout-section {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+  .checkout-content,
+  .checkout-breadcrumb {
+    padding: 0;
+  }
+  .breadcrumb-text-label {
+    padding: 0;
+  }
+  .breadcrumb-text-wrapper {
+    padding: 16px;
+    gap: 16px;
+  }
+  .breadcrumb-checkout-title {
+    padding: 0;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.2px;
+  }
+  .checkout-form {
+    gap: 0;
+  }
+  .checkout-content {
+    padding: 0;
+    gap: 0;
+  }
+  .checkout-button-wrapper {
+    padding: 0 16px 16px 16px;
+  }
 }
 </style>

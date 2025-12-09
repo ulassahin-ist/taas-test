@@ -5,3 +5,8 @@ REMOVİNG GLOBAL UNNECESSARİES
 Check 30 40 opacity colors
 
 polish color control for opacity values
+
+
+homepage: 
+Featured Products -> Newsletter : 1px
+Featured Categories -> Footer : 4px

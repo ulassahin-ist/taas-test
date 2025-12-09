@@ -29,7 +29,7 @@ defineProps({
   flex: 1;
   padding: 64px;
   border-radius: var(--radius-md);
-  border: 1px solid var(--smoke);
+  outline: 1px solid var(--smoke-50);
   overflow: hidden;
   box-shadow: 0px 1px 8px 0px #0000000a;
   transition: all 0.15s ease-in-out;
@@ -54,18 +54,18 @@ img {
   border-radius: var(--radius-md);
   background: #ffffffe5;
   transition: all 0.15s ease-in-out;
-  gap: 7.5px;
+  gap: 8px;
 }
 .category-card-title {
   font-weight: 700;
   font-size: 20px;
-  line-height: 22px;
+  line-height: 24px;
   text-align: center;
 }
 .category-card-description {
   font-weight: 400;
   font-size: 14px;
-  line-height: 25px;
+  line-height: 24px;
   text-align: center;
   color: var(--graphene);
 }
@@ -74,7 +74,7 @@ img {
   margin: 0 auto;
 }
 .category-card:hover {
-  border: 1px solid var(--smoke);
+  outline: 1px solid var(--smoke-50);
   box-shadow: 0px 1px 8px 0px #0000000a, 0px 24px 24px 0px #0000000f,
     0px -6px 30px 0px #0000000f;
 }

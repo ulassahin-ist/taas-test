@@ -96,7 +96,7 @@ img {
 .banner-image-right {
   position: absolute;
   bottom: 55px;
-  transform: translateX(228px);
+  transform: translateX(227px);
 }
 @media (max-width: 790px) {
   .banner {

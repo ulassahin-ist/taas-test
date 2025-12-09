@@ -19,7 +19,11 @@ const toggle = (i) => {
           <button class="footer-toggle" @click="toggle(0)">
             <span class="footer-heading">CORPORATE</span>
             <span class="footer-toggle-icon">
-              <img v-if="activeColumnIndex === 0" src="/icons/up.svg" />
+              <img
+                class="rotated-button"
+                v-if="activeColumnIndex === 0"
+                src="/icons/up.svg"
+              />
               <img v-else src="/icons/down.svg" />
             </span>
           </button>
@@ -39,7 +43,11 @@ const toggle = (i) => {
           <button class="footer-toggle" @click="toggle(1)">
             <span class="footer-heading">SHOPPING</span>
             <span class="footer-toggle-icon">
-              <img v-if="activeColumnIndex === 1" src="/icons/up.svg" />
+              <img
+                class="rotated-button"
+                v-if="activeColumnIndex === 1"
+                src="/icons/up.svg"
+              />
               <img v-else src="/icons/down.svg" />
             </span>
           </button>
@@ -59,7 +67,11 @@ const toggle = (i) => {
           <button class="footer-toggle" @click="toggle(2)">
             <span class="footer-heading">LEGAL</span>
             <span class="footer-toggle-icon">
-              <img v-if="activeColumnIndex === 2" src="/icons/up.svg" />
+              <img
+                class="rotated-button"
+                v-if="activeColumnIndex === 2"
+                src="/icons/up.svg"
+              />
               <img v-else src="/icons/down.svg" />
             </span>
           </button>
@@ -79,7 +91,11 @@ const toggle = (i) => {
           <button class="footer-toggle" @click="toggle(3)">
             <span class="footer-heading">HELP CENTER</span>
             <span class="footer-toggle-icon">
-              <img v-if="activeColumnIndex === 3" src="/icons/up.svg" />
+              <img
+                class="rotated-button"
+                v-if="activeColumnIndex === 3"
+                src="/icons/up.svg"
+              />
               <img v-else src="/icons/down.svg" />
             </span>
           </button>
@@ -97,7 +113,11 @@ const toggle = (i) => {
           <button class="footer-toggle" @click="toggle(4)">
             <span class="footer-heading">CONTACT US</span>
             <span class="footer-toggle-icon">
-              <img v-if="activeColumnIndex === 4" src="/icons/up.svg" />
+              <img
+                class="rotated-button"
+                v-if="activeColumnIndex === 4"
+                src="/icons/up.svg"
+              />
               <img v-else src="/icons/down.svg" />
             </span>
           </button>
@@ -125,7 +145,7 @@ const toggle = (i) => {
       <div class="copyright-socials flex w-full">
         <div class="copyright">
           <span>© Watsons 2021 all rıghts reserved</span>
-          <div class="desktop">&nbsp;|&nbsp;</div>
+          <div class="desktop" style="margin: 0 5px">|</div>
           <span>a member of ck hutchıson holdıngs</span>
         </div>
         <div class="socials flex gap-24 center">
@@ -143,7 +163,6 @@ const toggle = (i) => {
 <style scoped>
 .page-pad {
   padding: 48px 0;
-  height: 320px;
 }
 .footer {
   gap: 32px;
@@ -169,7 +188,7 @@ const toggle = (i) => {
 }
 
 .footer-column {
-  gap: 30px;
+  gap: 32px;
   width: 160px;
 }
 
@@ -181,6 +200,11 @@ const toggle = (i) => {
   justify-content: space-between;
   padding-right: 0;
   cursor: pointer;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0px;
+  height: 16px;
 }
 
 .footer-heading {
@@ -224,9 +248,7 @@ const toggle = (i) => {
   .mobile {
     display: none;
   }
-  .page-pad {
-    height: auto;
-  }
+
   .footer-nav {
     flex-direction: row;
   }
@@ -263,7 +285,11 @@ const toggle = (i) => {
     gap: 16px;
   }
   .footer-toggle {
-    padding: 4px 4px 4px 0;
+    padding: 4px 5px 4px 0;
+    height: auto;
+  }
+  .rotated-button {
+    transform: translate(3px, -1px) rotate(-2deg);
   }
   .footer-column {
     gap: 2px;
