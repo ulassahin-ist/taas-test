@@ -60,6 +60,15 @@
 .featured-category-item {
   flex: 1 0 40%;
 }
+@media (max-width: 800px) {
+  .container {
+    padding: 24px;
+    gap: 24px;
+  }
+  .featured-categories {
+    gap: 24px;
+  }
+}
 @media (max-width: 579px) {
   .container {
     padding: 16px;

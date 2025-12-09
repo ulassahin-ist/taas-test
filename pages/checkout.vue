@@ -47,6 +47,7 @@
 }
 .checkout-section {
   background: #ffffff;
+  box-shadow: inset 0px 4px 16px 0px #2a2a480a;
 }
 .checkout-breadcrumb {
   background: var(--smoke-30);

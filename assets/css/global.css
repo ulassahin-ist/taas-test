@@ -18,7 +18,7 @@
   --gray-40: #8493a866;
   --gray-dark: #505357;
 
-  --smoke: #ececec80;
+  --smoke: #ececec;
   --smoke-50: #ececec80;
   --smoke-30: #ececec4d;
   --smoke-16: #ececec29;
@@ -122,7 +122,7 @@ input {
   background: var(--white);
   font-size: 14px;
   border-radius: var(--radius-sm);
-  border: 1px solid #ececec;
+  border: 1px solid var(--smoke);
   font-size: 16px;
   line-height: 24px;
   color: var(--coal-60);
@@ -132,7 +132,11 @@ input:focus {
   outline: none;
   box-shadow: 0px 1px 2px 0px #37415114;
 }
-
+input::placeholder,
+textarea::placeholder,
+select::placeholder {
+  color: var(--gray);
+}
 h2 {
   font-weight: 500;
   font-size: 20px;

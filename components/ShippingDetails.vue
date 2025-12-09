@@ -68,7 +68,7 @@
         </div>
       </div>
 
-      <div class="shipping-details-group">
+      <div class="shipping-details-group disabled">
         <label class="shipping-details-label" for="district">
           District *
         </label>
@@ -121,6 +121,9 @@
   /* half of irregular gapping of 40px in figma */
   flex: 0 0 calc(50% - 20px);
 }
+.shipping-details-group.disabled {
+  opacity: 0.6;
+}
 .shipping-details-group:last-child {
   flex: 0 0 100%;
 }
@@ -146,22 +149,17 @@
   height: 48px;
   padding: 12px 16px;
   border-radius: 6px;
-  border: 1px solid var(--coal-60);
+  border: 1px solid var(--smoke);
   background: #ffffff;
   font-size: 16px;
   line-height: 24px;
-  color: var(--graphene);
+  color: var(--coal-60);
   font-family: inherit;
   cursor: pointer;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  border-color: #e0e0e0;
   box-shadow: 0 0 0 1px #f3f4f6;
-}
-
-.select-field-input:has(option[value=""]:checked) {
-  color: var(--gray);
 }
 
 .select-field-input:hover {
@@ -177,24 +175,6 @@
   outline: none;
   border-color: #3b82f6;
   box-shadow: 0 0 0 2px #bfdbfe;
-}
-
-.select-field-input:disabled {
-  background: #f9f9f9;
-  border-color: #f0f0f0;
-  color: #c1c7d0;
-  cursor: not-allowed;
-  opacity: 1;
-}
-
-.select-field-input:disabled + .select-field-icon {
-  opacity: 0.4;
-}
-
-.select-field-input:disabled:hover,
-.select-field-input:disabled:focus {
-  border-color: #f0f0f0;
-  box-shadow: none;
 }
 
 .select-field-icon {

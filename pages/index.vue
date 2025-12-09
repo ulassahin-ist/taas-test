@@ -6,7 +6,7 @@
         <p class="description">
           <br /><br />
           You can click on buttons to view the
-          <strong>full pages</strong>.<br /><br />
+          <strong>pages</strong>.<br /><br />
 
           If you'd like to switch between pages afterward, you can use the
           Header controls, the logo <strong>(</strong
@@ -74,7 +74,7 @@
         <div class="phone-frame">
           <div class="phone-screen">
             <iframe
-              src="/homepage"
+              :src="baseURL + 'homepage'"
               class="iframe"
               title="Homepage preview"
             ></iframe>
@@ -95,7 +95,7 @@
         <div class="phone-frame">
           <div class="phone-screen">
             <iframe
-              src="/checkout"
+              :src="baseURL + 'checkout'"
               class="iframe"
               title="Bonus preview"
             ></iframe>
@@ -112,6 +112,9 @@
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
+
+const config = useRuntimeConfig();
+const baseURL = config.app.baseURL;
 
 const isMobile = ref(false);
 
@@ -245,6 +248,7 @@ onBeforeUnmount(() => {
   display: flex;
   align-items: center;
   gap: 8px;
+  padding-left: 10px;
   font-size: 13px;
   font-weight: 500;
   color: var(--snow);

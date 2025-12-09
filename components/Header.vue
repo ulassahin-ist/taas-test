@@ -7,7 +7,7 @@
             <img src="/icons/store.svg" />Stores
           </button>
           <button class="flex center header-top-button">
-            <img src="/icons/catalog.svg" />Catalog
+            <img style="padding-bottom: 2px" src="/icons/catalog.svg" />Catalog
           </button>
         </div>
         <div class="desktop header-top-text">
@@ -15,7 +15,9 @@
         </div>
         <div class="header-contact gap-8 grow">
           <div class="phone flex center gap-8">
-            <div class="desktop">Call us:(+90) 850 123 45 67</div>
+            <div class="desktop" style="height: 14px">
+              Call us:(+90) 850 123 45 67
+            </div>
             <img src="/icons/phone-white.svg" />
           </div>
         </div>
@@ -38,23 +40,33 @@
         </div>
         <div class="user desktop flex center">
           <p>Hello,&nbsp;<strong>Clara Clara</strong></p>
-          <img class="avatar" src="/avatar.png" alt="Avatar" />
+          <div class="avatar">
+            <img src="/avatar.png" alt="Avatar" />
+          </div>
           <img style="cursor: pointer" src="/icons/down-light.svg" alt="Drop" />
         </div>
 
         <div class="divider-vertical desktop"></div>
-
+        <!-- Some icons have inline-styling for irregular sized svg misbehaviour -->
         <div class="header-action-button mobile">
-          <img src="/icons/search.svg" alt="Search" />
+          <img
+            style="padding-left: 7px; padding-top: 1px"
+            src="/icons/search.svg"
+            alt="Search"
+          />
         </div>
         <div class="header-action-button" @click="navigateTo('/checkout')">
-          <img src="/icons/basket.svg" alt="Basket" />
+          <img
+            class="header-action-button-basket"
+            src="/icons/basket.svg"
+            alt="Basket"
+          />
           <div class="desktop" style="color: white">.</div>
           <div class="header-basket-counter flex center">{{ basketCount }}</div>
         </div>
         <div class="header-action-button mobile">
           <img
-            style="cursor: pointer"
+            style="cursor: pointer; padding-right: 8px"
             src="/icons/hamburger.svg"
             alt="Basket"
             @click="openMenu"
@@ -151,7 +163,7 @@
 
 <style scoped>
 .header {
-  box-shadow: 0px 4px 16px 0px #2a2a480a;
+  box-shadow: 0px 8px 24px rgba(42, 42, 72, 0.16);
 }
 
 .header-top {
@@ -169,19 +181,20 @@
   cursor: pointer;
   float: right;
   padding: 0;
+  line-height: 14px;
 }
 
-.header-top button {
+.header-top-button {
   gap: 8px;
-  padding: 0 16px;
+  padding: 6px 16px 4px;
   border-radius: var(--radius-sm);
   font-weight: 400;
   letter-spacing: 0.17px;
   font-size: 14px;
   line-height: 14px;
-  height: 24px;
   display: flex;
   align-items: center;
+  height: 24px;
 }
 
 .header-top button:hover {
@@ -189,7 +202,7 @@
 }
 
 .header-top-text {
-  color: var(--smoke);
+  color: var(--smoke-50);
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
@@ -202,10 +215,10 @@
 
 .logo {
   cursor: pointer;
-  width: 146px;
+  width: 146.12px;
 }
 .header-actions {
-  gap: 25.5px;
+  gap: 24px;
 }
 .search {
   position: relative;
@@ -229,8 +242,8 @@
   border-radius: var(--radius-lg);
   border: none;
   background: #ececec4d;
-  color: #8493a8;
-  padding-left: 43px;
+  color: var(--gray);
+  padding-left: 42px;
   font-size: 14px;
 }
 
@@ -243,7 +256,9 @@
   justify-content: center;
   cursor: pointer;
 }
-
+.header-action-button-basket {
+  padding-top: 1px;
+}
 .header-basket-counter {
   width: 16px;
   height: 16px;
@@ -256,16 +271,16 @@
   text-align: center;
   font-weight: 600;
   position: absolute;
-  right: -1px;
-  top: -9px;
+  right: -0.3px;
+  top: -8px;
 }
 
 .user {
   font-weight: 400;
   font-size: 14px;
-  line-height: 24px;
+  line-height: 16px;
   color: var(--gray);
-  gap: 17px;
+  gap: 17.2px;
   white-space: nowrap;
 }
 .user p {
@@ -278,10 +293,19 @@
 }
 
 .avatar {
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   overflow: hidden;
-  width: 33px;
-  outline: 1px solid var(--white);
+  border: 2px solid var(--white);
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 30%;
+  transform: scale(1.1);
 }
 
 .menu {
@@ -326,7 +350,7 @@
     height: 56px;
   }
   .logo {
-    width: 120px;
+    width: 121px;
   }
   .header-actions {
     gap: 40px;
@@ -336,7 +360,10 @@
     align-items: center;
     justify-content: center;
   }
-
+  .header-action-button-basket {
+    padding-right: 3px;
+    padding-top: 1px;
+  }
   .desktop {
     display: none;
   }
