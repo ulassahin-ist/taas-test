@@ -1,5 +1,5 @@
 <template>
-  <div class="container flex column">
+  <section class="container flex column">
     <div class="feature-title-wrapper">
       <div class="featured-title-line"></div>
       <div class="feature-title">Featured categories</div>
@@ -12,7 +12,7 @@
         :category="c"
       />
     </div>
-  </div>
+  </section>
 </template>
 
 <style scoped>

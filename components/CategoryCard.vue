@@ -7,7 +7,7 @@ defineProps({
 });
 </script>
 <template>
-  <div class="category-card">
+  <article class="category-card">
     <div class="category-card-image-wrapper">
       <img :src="category.thumb" alt="thumb" />
     </div>
@@ -20,7 +20,7 @@ defineProps({
       </div>
       <button class="btn-secondary">BROWSE</button>
     </div>
-  </div>
+  </article>
 </template>
 
 <style scoped>

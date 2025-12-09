@@ -6,7 +6,7 @@
       <div class="checkout-cart-list flex column">
         <!-- Again could be a component(ShoppingCartItem.vue) 
          but skipped due to lacking data -->
-        <div class="checkout-cart-item">
+        <article class="checkout-cart-item">
           <div class="checkout-cart-image-wrapper">
             <img
               src="/checkout-1.png"
@@ -31,8 +31,8 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="checkout-cart-item">
+        </article>
+        <article class="checkout-cart-item">
           <div class="checkout-cart-image-wrapper">
             <img
               src="/checkout-2.png"
@@ -57,7 +57,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </article>
       </div>
 
       <div class="checkout-cart-discount">

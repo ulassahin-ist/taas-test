@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="product-card">
+  <aside class="product-card">
     <div class="product-card-image-wrapper flex center w-full">
       <img :src="product.thumbnail" :alt="product.title" />
       <div class="product-card-hover-actions flex center desktop">
@@ -36,7 +36,7 @@ defineProps({
         <img src="/icons/basket-white.svg" alt="View" />ADD
       </button>
     </div>
-  </div>
+  </aside>
 </template>
 
 <style scoped>

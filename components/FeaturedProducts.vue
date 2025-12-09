@@ -4,7 +4,7 @@ const products = await getProducts(4, 3);
 </script>
 
 <template>
-  <div class="container flex column">
+  <section class="container flex column">
     <div class="feature-title-wrapper">
       <div class="featured-title-line"></div>
       <div class="feature-title">Featured products</div>
@@ -25,7 +25,7 @@ const products = await getProducts(4, 3);
         :product="p"
       />
     </div>
-  </div>
+  </section>
 </template>
 
 <style scoped>

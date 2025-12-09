@@ -115,7 +115,6 @@ button {
   -moz-appearance: none;
   appearance: none;
   transition: 0.3s all ease-in-out;
-
   cursor: pointer;
 }
 textarea,
@@ -214,7 +213,6 @@ h2 {
   font-size: 14px;
   line-height: 16px;
   text-align: center;
-  text-transform: uppercase;
 }
 
 .btn-primary:hover {

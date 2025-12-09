@@ -9,7 +9,7 @@ const toggle = (i) => {
 
 <template>
   <!-- Inconsistent caps casing kept for pixel perfect -->
-  <div class="w-full page-pad">
+  <footer class="w-full page-pad">
     <div class="footer container flex column">
       <div class="footer-nav flex">
         <div
@@ -157,7 +157,7 @@ const toggle = (i) => {
         </div>
       </div>
     </div>
-  </div>
+  </footer>
 </template>
 
 <style scoped>

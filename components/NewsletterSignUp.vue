@@ -1,6 +1,6 @@
 <!-- components/Header.vue -->
 <template>
-  <section class="newsletter-signup">
+  <aside class="newsletter-signup">
     <div class="newsletter-content flex center">
       <div class="newsletter-text-content grow flex column column-2">
         <div class="newsletter-text-title">Sign up to our newsletter</div>
@@ -14,7 +14,7 @@
         <button class="btn-primary">SUBSCRIBE</button>
       </div>
     </div>
-  </section>
+  </aside>
 </template>
 
 <style scoped>

@@ -6,7 +6,7 @@
         <img class="nav-button.left" src="/icons/left-light.svg" alt="Left" />
       </div>
       <!-- inner-wrapper could be a component itself(HeroItem.vue) but i lack data so i am skipping -->
-      <div class="inner-wrapper container flex center">
+      <article class="inner-wrapper container flex center">
         <div class="hero-text-content column-2 flex column">
           <div class="hero-text-label">NATURALS BY WATSONS</div>
           <div class="hero-text-title">The new 2021 collection</div>
@@ -28,7 +28,7 @@
             <img src="/hero.png" alt="Hero Image" />
           </picture>
         </div>
-      </div>
+      </article>
       <div class="nav-button-wrapper desktop flex center">
         <img class="nav-button" src="/icons/right.svg" alt="Right" />
       </div>
@@ -126,6 +126,11 @@
   height: 6px;
   width: 6px;
   cursor: pointer;
+}
+@media (max-width: 1440px) {
+  .nav-button-wrapper:first-child {
+    transform: translateX(0);
+  }
 }
 @media (max-width: 768px) {
   .desktop {
