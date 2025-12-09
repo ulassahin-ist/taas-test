@@ -322,7 +322,7 @@ strong {
     align-items: end;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 500px), (max-height: 850px) {
   .mobile-view {
     margin: 0;
     padding: 0;
@@ -339,6 +339,16 @@ strong {
     padding: 50px 16px;
   }
 }
+
+@media (max-width: 950px) and (max-height: 650px) {
+  .hub {
+    padding: 0;
+  }
+  .mobile-intro {
+    border-radius: 0;
+    padding: 10px;
+  }
+}
 </style>
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
@@ -350,7 +360,13 @@ const isMobile = ref(false);
 
 function updateIsMobile() {
   if (typeof window === "undefined") return;
-  isMobile.value = window.innerWidth <= 810;
+
+  const w = window.innerWidth;
+  const h = window.innerHeight;
+
+  const isPhone = (w <= 810 && h <= 1200) || (w <= 1200 && h <= 600);
+
+  isMobile.value = isPhone;
 }
 
 onMounted(() => {
