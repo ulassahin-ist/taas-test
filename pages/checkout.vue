@@ -3,9 +3,15 @@
     <div class="checkout-breadcrumb w-full">
       <div class="breadcrumb-text-wrapper container flex column w-full">
         <div class="breadcrumb-text-label flex gap-8">
-          Homepage<img src="/icons/right-breadcrumb.svg" alt="&gt;" /> Shopping
-          Cart<img src="/icons/right-breadcrumb.svg" alt="&gt;" />
-          <span class="checkout-text-label-highlight">Checkout</span>
+          <span class="breadcrumb-hover-item" @click="navigateTo('/homepage')"
+            >Homepage</span
+          >
+          <img src="/icons/right-breadcrumb.svg" alt="&gt;" />
+          <span class="breadcrumb-hover-item">Shopping Cart</span
+          ><img src="/icons/right-breadcrumb.svg" alt="&gt;" />
+          <span class="checkout-text-label-highlight breadcrumb-hover-item"
+            >Checkout</span
+          >
         </div>
         <div class="breadcrumb-checkout-title">Checkout</div>
       </div>
@@ -16,7 +22,7 @@
         <form class="checkout-form flex column" novalidate>
           <ShippingDetails />
           <PaymentDetails class="payment-details" />
-          <!-- Why is here a second required fields here 
+          <!-- Why is here a second "* Required fields" here 
            i don't know but keeping it to match pixel perfect -->
           <span class="payment-form-note desktop">* Required fields</span>
           <div class="checkout-button-wrapper flex w-full">
@@ -55,6 +61,13 @@
   font-size: 12px;
   line-height: 16px;
   color: var(--gray);
+}
+.breadcrumb-hover-item {
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+}
+.breadcrumb-hover-item:hover {
+  text-decoration: underline;
 }
 .checkout-text-label-highlight {
   color: var(--secondary);

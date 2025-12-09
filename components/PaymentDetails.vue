@@ -100,7 +100,7 @@
 .payment-details-group {
   display: flex;
   flex-direction: column;
-  gap: 7.5px;
+  gap: 8px;
   justify-content: center;
   width: 100%;
   position: relative;
@@ -135,7 +135,8 @@
 .payment-form-note {
   color: var(--gray);
   font-size: 14px;
-  line-height: 26px;
+  line-height: 24px;
+  height: 24px;
 }
 
 .payment-details-image {
@@ -162,7 +163,7 @@
     padding: 16px;
     flex-wrap: nowrap;
     flex-direction: column-reverse;
-    gap: 17px;
+    gap: 16px;
   }
   .payment-details-image {
     max-width: none;

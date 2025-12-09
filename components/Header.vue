@@ -3,14 +3,16 @@
     <div class="header-top flex center">
       <div class="container flex center">
         <div class="header-nav flex grow gap-8">
-          <button name="stores" class="flex center">
+          <button class="flex center header-top-button">
             <img src="/icons/store.svg" />Stores
           </button>
-          <button name="catalog" class="flex center">
+          <button class="flex center header-top-button">
             <img src="/icons/catalog.svg" />Catalog
           </button>
         </div>
-        <p class="desktop">Watsons Beauty and Personal Care Awards Nominees!</p>
+        <div class="desktop header-top-text">
+          Watsons Beauty and Personal Care Awards Nominees!
+        </div>
         <div class="header-contact gap-8 grow">
           <div class="phone flex center gap-8">
             <div class="desktop">Call us:(+90) 850 123 45 67</div>
@@ -20,7 +22,12 @@
       </div>
     </div>
     <div class="header-main flex center container">
-      <img class="logo" src="/logo.png" alt="Logo" />
+      <img
+        class="logo"
+        src="/logo.png"
+        alt="Logo"
+        @click="navigateTo('/homepage')"
+      />
       <div class="header-actions grow flex center flex-end">
         <div class="search desktop">
           <img src="/icons/search-light.svg" class="search-icon" />
@@ -40,7 +47,7 @@
         <div class="header-action-button mobile">
           <img src="/icons/search.svg" alt="Search" />
         </div>
-        <div class="header-action-button">
+        <div class="header-action-button" @click="navigateTo('/checkout')">
           <img src="/icons/basket.svg" alt="Basket" />
           <div class="desktop" style="color: white">.</div>
           <div class="header-basket-counter flex center">{{ basketCount }}</div>
@@ -171,14 +178,17 @@
   font-weight: 400;
   letter-spacing: 0.17px;
   font-size: 14px;
-  line-height: 24px;
+  line-height: 14px;
+  height: 24px;
+  display: flex;
+  align-items: center;
 }
 
 .header-top button:hover {
   background: var(--darker-gray);
 }
 
-.header-top p {
+.header-top-text {
   color: var(--smoke);
   font-weight: 400;
   font-size: 14px;
@@ -191,6 +201,7 @@
 }
 
 .logo {
+  cursor: pointer;
   width: 146px;
 }
 .header-actions {
