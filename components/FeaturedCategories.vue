@@ -95,30 +95,30 @@ import CategoryCard from "./CategoryCard.vue";
 const config = useRuntimeConfig();
 const baseURL = config.app.baseURL;
 
-const fetchedCategories = {
-  1: {
+const fetchedCategories = [
+  {
     id: 1,
     title: "Personal Care",
     description: "Lorem ipsum dolor sit amet consectetu elit aliquam",
     thumb: `${baseURL}ft-1.png`,
   },
-  2: {
+  {
     id: 2,
     title: "Skin Care",
     description: "Lorem ipsum dolor sit amet consectetu elit aliquam",
     thumb: `${baseURL}ft-2.png`,
   },
-  3: {
+  {
     id: 3,
     title: "Make - Up",
     description: "Lorem ipsum dolor sit amet consectetu elit aliquam",
     thumb: `${baseURL}ft-3.png`,
   },
-  4: {
+  {
     id: 4,
     title: "Mother & Baby",
     description: "Lorem ipsum dolor sit amet consectetu elit aliquam",
     thumb: `${baseURL}ft-4.png`,
   },
-};
+];
 </script>

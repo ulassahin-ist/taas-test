@@ -1,4 +1,0 @@
-
-homepage: 
-Featured Products -> Newsletter : 1px
-Featured Categories -> Footer : 4px
