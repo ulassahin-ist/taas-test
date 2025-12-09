@@ -1,4 +1,5 @@
 <template>
+  <!-- I made this page pretty fast dont judge me here :D -->
   <main class="hub">
     <section v-if="isMobile" class="mobile-view">
       <div class="mobile-intro">
@@ -45,8 +46,9 @@
           You can click on <em>either phone</em> to view the
           <strong>full page</strong>, or you can navigate
           <em>directly inside</em> the phones for a
-          <strong>mobile view</strong>.<br /><br />
+          <strong>mobile view</strong>.<br />
           <span class="desktop">
+            <br />
             If you'd like to switch between pages afterward, you can use the
             Header controls, the logo <strong>(</strong
             ><img class="inline-logo" src="/logo.png" alt="Logo" /><strong
@@ -110,38 +112,14 @@
   </main>
 </template>
 
-<script setup>
-import { ref, onMounted, onBeforeUnmount } from "vue";
-
-const config = useRuntimeConfig();
-const baseURL = config.app.baseURL;
-
-const isMobile = ref(false);
-
-function updateIsMobile() {
-  if (typeof window === "undefined") return;
-  isMobile.value = window.innerWidth <= 810;
-}
-
-onMounted(() => {
-  updateIsMobile();
-  window.addEventListener("resize", updateIsMobile);
-});
-
-onBeforeUnmount(() => {
-  if (typeof window === "undefined") return;
-  window.removeEventListener("resize", updateIsMobile);
-});
-</script>
-
 <style scoped>
 .hub {
-  min-height: 100vh;
-  background: var(--titan-gradient);
-  padding: 98px 16px 64px;
+  max-height: 100dvh;
+  padding: 10px;
+  height: 100dvh;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  background: var(--titan-gradient);
 }
 
 .mobile-view {
@@ -150,6 +128,7 @@ onBeforeUnmount(() => {
   width: 100%;
   text-align: center;
 }
+
 .title {
   font-size: 28px;
   line-height: 30px;
@@ -203,6 +182,7 @@ onBeforeUnmount(() => {
 }
 
 .desktop-view {
+  margin: auto;
   display: flex;
   gap: 32px;
   justify-content: center;
@@ -316,14 +296,17 @@ onBeforeUnmount(() => {
     display: none !important;
   }
   .hub {
-    padding: 180px 10px 10px;
+    padding: 137px 10px 10px;
   }
   .intro {
-    margin: 0 2px;
+    margin: 0;
     width: 100%;
     position: fixed;
     z-index: 10;
-    top: 2px;
+    top: 0;
+    padding: 18px 24px;
+    border-top-left-radius: 0%;
+    border-top-right-radius: 0%;
   }
   .phone-card {
     padding: 8px 8px 10px;
@@ -333,8 +316,6 @@ onBeforeUnmount(() => {
     height: 630px;
   }
   .desktop-view {
-    height: 100%;
-    width: 100%;
     align-items: end;
   }
 }
@@ -356,3 +337,26 @@ onBeforeUnmount(() => {
   }
 }
 </style>
+<script setup>
+import { ref, onMounted, onBeforeUnmount } from "vue";
+
+const config = useRuntimeConfig();
+const baseURL = config.app.baseURL;
+
+const isMobile = ref(false);
+
+function updateIsMobile() {
+  if (typeof window === "undefined") return;
+  isMobile.value = window.innerWidth <= 810;
+}
+
+onMounted(() => {
+  updateIsMobile();
+  window.addEventListener("resize", updateIsMobile);
+});
+
+onBeforeUnmount(() => {
+  if (typeof window === "undefined") return;
+  window.removeEventListener("resize", updateIsMobile);
+});
+</script>
