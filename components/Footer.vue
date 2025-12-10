@@ -131,7 +131,7 @@ const toggle = (i) => {
               >
             </li>
             <li class="flex gap-8">
-              <img src="/icons/phone.svg" />
+              <img src="/icons/phone.svg" class="flex center" />
               <a href="#">0850 755 9987</a>
             </li>
             <li class="flex gap-8">
@@ -162,7 +162,7 @@ const toggle = (i) => {
 
 <style scoped>
 .page-pad {
-  padding: 48px 0;
+  padding: 46.21px 0 47.8px;
 }
 .footer {
   gap: 32px;
@@ -188,7 +188,7 @@ const toggle = (i) => {
 }
 
 .footer-column {
-  gap: 32px;
+  gap: 34px;
   width: 160px;
 }
 

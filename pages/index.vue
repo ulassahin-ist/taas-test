@@ -1,36 +1,42 @@
+<!-- Hub Page Component -->
+
 <template>
   <!-- I made this page pretty fast dont judge me here :D -->
   <main class="hub">
+    <!-- Mobile intro -->
     <section v-if="isMobile" class="mobile-view">
       <div class="mobile-intro">
         <h1 class="title">The Taas Company Case</h1>
         <p class="description">
           <br /><br />
-          You can click on buttons to view the
-          <strong>pages</strong>.<br /><br />
-
+          You can click on buttons to view the <strong>pages</strong>.
+          <br /><br />
           If you'd like to switch between pages afterward, you can use the
-          Header controls, the logo <strong>(</strong
+          Header controls — the logo
+          <strong>(</strong
           ><img class="inline-logo" src="/logo.png" alt="Logo" /><strong
             >)</strong
           >
-          takes you back to the homepage, and the basket <strong>(</strong
+          returns to the homepage, and the basket
+          <strong>(</strong
           ><img class="inline-basket" src="/basket.png" alt="Basket" /><strong
             >)</strong
           >
-          opens the checkout screen.<br /><br />
+          opens checkout.
+          <br /><br />
 
           <strong class="thank-you">
-            Thank you for taking the time to look through the project, I hope
-            the result is satisfying. Have a great one!
-            <br />
-            <br /><br />
+            Thank you for taking the time to look through the project. Have a
+            great one!
+            <br /><br /><br />
           </strong>
         </p>
+
         <div class="buttons">
           <button class="btn-primary" @click="navigateTo('/homepage')">
             Go to Homepage
           </button>
+
           <button class="btn-secondary" @click="navigateTo('/checkout')">
             Go to Checkout
           </button>
@@ -38,35 +44,41 @@
       </div>
     </section>
 
+    <!-- Desktop preview mode -->
     <section v-else class="desktop-view">
       <div class="intro">
         <h1 class="title">The Taas Company Case</h1>
+
         <p class="description">
           <br />
           You can click on <em>either phone</em> to view the
-          <strong>full page</strong>, or you can navigate
-          <em>directly inside</em> the phones for a
-          <strong>mobile view</strong>.<br />
+          <strong>full page</strong>, or navigate inside them for a
+          <strong>mobile view</strong>.
+          <br />
+
           <span class="desktop">
             <br />
-            If you'd like to switch between pages afterward, you can use the
-            Header controls, the logo <strong>(</strong
+            Header controls allow switching between pages — the logo
+            <strong>(</strong
             ><img class="inline-logo" src="/logo.png" alt="Logo" /><strong
               >)</strong
             >
-            takes you back to the homepage, and the basket <strong>(</strong
+            goes to homepage, and the basket
+            <strong>(</strong
             ><img class="inline-basket" src="/basket.png" alt="Basket" /><strong
               >)</strong
             >
-            opens the checkout screen.<br /><br />
+            opens checkout.
+            <br /><br />
           </span>
+
           <strong class="thank-you">
-            Thank you for taking the time to look through the project, I hope
-            the result is satisfying. Have a great one!
+            Thank you for taking the time to look through the project.
           </strong>
         </p>
       </div>
 
+      <!-- Phone preview: homepage -->
       <NuxtLink to="/homepage" class="phone-card">
         <div class="label">
           <span class="dot primary"></span>
@@ -88,6 +100,7 @@
         </div>
       </NuxtLink>
 
+      <!-- Phone preview: checkout -->
       <NuxtLink to="/checkout" class="phone-card">
         <div class="label">
           <span class="dot secondary"></span>
@@ -117,11 +130,12 @@
   max-height: 100dvh;
   padding: 10px;
   height: 100dvh;
-  overflow: hidden;
+  overflow: auto;
   display: flex;
   background: var(--titan-gradient);
 }
 
+/* Mobile */
 .mobile-view {
   margin: auto;
   max-width: 480px;
@@ -129,19 +143,29 @@
   text-align: center;
 }
 
+.mobile-intro {
+  border-radius: 24px;
+  background: #fafcff99;
+  padding: 24px;
+  box-shadow: 0px 4px 16px 0px #2a2a480a;
+}
+
 .title {
   font-size: 28px;
   line-height: 30px;
 }
+
 .description {
   letter-spacing: 0.5px;
   line-height: 20px;
   font-size: 14px;
   color: var(--gray);
 }
+
 strong {
   color: var(--graphene);
 }
+
 .inline-logo {
   height: 12px;
 }
@@ -160,30 +184,7 @@ strong {
   gap: 12px;
 }
 
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 16px;
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 500;
-  text-decoration: none;
-  background: var(--primary);
-  color: var(--white);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-}
-
-.button.secondary {
-  background: var(--secondary);
-}
-
-.button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
-}
-
+/* Desktop layout */
 .desktop-view {
   margin: auto;
   display: flex;
@@ -202,13 +203,8 @@ strong {
   padding: 24px;
   box-shadow: 0px 4px 16px 0px #2a2a480a;
 }
-.mobile-intro {
-  border-radius: 24px;
-  background: #fafcff99;
-  padding: 24px;
-  box-shadow: 0px 4px 16px 0px #2a2a480a;
-}
 
+/* Phone preview cards */
 .phone-card {
   display: flex;
   flex-direction: column;
@@ -282,25 +278,22 @@ strong {
 .footer {
   margin-top: 16px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   font-size: 14px;
   font-weight: 600;
   color: var(--snow);
 }
 
-.centered-text {
-  width: 100%;
-  text-align: center;
-}
-
+/* Responsive tweaks */
 @media (max-width: 1220px) {
   .desktop {
     display: none !important;
   }
+
   .hub {
     padding: 137px 10px 10px;
   }
+
   .intro {
     margin: 0;
     width: 100%;
@@ -308,20 +301,24 @@ strong {
     z-index: 10;
     top: 0;
     padding: 18px 24px;
-    border-top-left-radius: 0%;
-    border-top-right-radius: 0%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
   }
+
   .phone-card {
     padding: 8px 8px 10px;
   }
+
   .phone-frame {
     width: 375px;
     height: 630px;
   }
+
   .desktop-view {
     align-items: end;
   }
 }
+
 @media (max-width: 500px), (max-height: 850px) {
   .mobile-view {
     margin: 0;
@@ -330,13 +327,15 @@ strong {
     width: 100%;
     height: 100%;
   }
+
   .mobile-intro {
     position: fixed;
     height: 100%;
     width: 100%;
     inset: 0;
-    max-width: none;
     padding: 50px 16px;
+    border-radius: 0;
+    overflow: auto;
   }
 }
 
@@ -350,6 +349,7 @@ strong {
   }
 }
 </style>
+
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
 
@@ -376,6 +376,7 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   if (typeof window === "undefined") return;
+
   window.removeEventListener("resize", updateIsMobile);
 });
 </script>

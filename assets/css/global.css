@@ -1,15 +1,24 @@
+/* --GLOBAL STYLES-- */
+
+/* FONT IMPORTS */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
 
+/* CSS VARIABLES */
 :root {
+  /* Primary & Secondary Colors */
   --primary: #ff27ad;
   --primary-dark: #f1129c;
   --secondary: #0099a8;
   --secondary-dark: #138a96;
+
+  /* Neutral Colors */
   --snow: #fafcff;
   --white-90: #ffffffe5;
   --white-20: #ffffff33;
   --black-80: #000000cc;
-  /* text-colors */
+  --white: #fff;
+
+  /* Text Colors */
   --coal: #2a2a48;
   --coal-60: #2a2a4899;
   --coal-light: #2a2a4899;
@@ -18,19 +27,23 @@
   --gray-40: #8493a866;
   --gray-dark: #505357;
 
+  /* Smoke Variants */
   --smoke: #ececec;
   --smoke-50: #ececec80;
   --smoke-30: #ececec4d;
   --smoke-16: #ececec29;
-  --white: #fff;
+
+  /* Overlay Colors */
   --overlay-dark: #000000cc;
   --overlay-light: #ffffff33;
 
-  /* background-colors */
+  /* Background Colors */
   --neutral: #ffffff;
   --dark-gray: #505357;
   --darker-gray: #4b4b4b;
   --titan-white: #f2f0ff;
+
+  /* Gradients */
   --titan-gradient: linear-gradient(
       87.81deg,
       #f2f0ff 35.04%,
@@ -57,12 +70,13 @@
     ),
     linear-gradient(0deg, rgba(19, 138, 150, 0.3), rgba(19, 138, 150, 0.3));
 
-  /* radius */
+  /* Border Radius */
   --radius-sm: 4px;
   --radius-md: 6px;
   --radius-lg: 32px;
 }
 
+/* BASE RESETS */
 * {
   margin: 0;
   padding: 0;
@@ -74,6 +88,7 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
 }
+
 html {
   margin: 0;
   padding: 0;
@@ -81,6 +96,7 @@ html {
   overflow-x: hidden;
   scrollbar-width: none;
 }
+
 body {
   margin: 0;
   padding: 0;
@@ -92,11 +108,15 @@ body {
   font-weight: 400px;
   letter-spacing: 0;
 }
+
+/* Scroll Lock Utility (for mobile menu) */
 html.no-scroll,
 body.no-scroll {
   overflow: hidden;
   position: relative;
 }
+
+/* LINKS & BUTTONS */
 a {
   text-decoration: none;
   color: inherit;
@@ -117,6 +137,8 @@ button {
   transition: 0.3s all ease-in-out;
   cursor: pointer;
 }
+
+/* FORM ELEMENTS */
 textarea,
 input {
   background: var(--white);
@@ -127,22 +149,29 @@ input {
   line-height: 24px;
   color: var(--coal-60);
 }
+
 textarea:focus,
 input:focus {
   outline: none;
   box-shadow: 0px 1px 2px 0px #37415114;
 }
+
 input::placeholder,
 textarea::placeholder,
 select::placeholder {
   color: var(--gray);
 }
+
+/* TYPOGRAPHY */
 h2 {
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
 }
-/* Global Classes */
+
+/* UTILITY CLASSES */
+
+/* Flexbox Utilities */
 .flex {
   display: flex;
 }
@@ -163,6 +192,7 @@ h2 {
 .flex-end {
   justify-content: end;
 }
+
 .flex-start {
   justify-content: start;
 }
@@ -175,7 +205,7 @@ h2 {
   width: 100%;
 }
 
-/* Gaps */
+/* Gap Utilities */
 .gap-8 {
   gap: 8px;
 }
@@ -192,22 +222,22 @@ h2 {
   gap: 24px;
 }
 
-/* Divider */
-
-/* DONT FORGET THİS */
+/* Dividers */
 .divider-vertical {
   height: 24px;
   width: 0.5px;
   background: var(--smoke);
 }
 
-/* Global States */
+/* STATE UTILITIES */
 .disabled {
   cursor: default;
   pointer-events: none;
 }
 
-/* Buttons */
+/* BUTTON STYLES */
+
+/* Primary Button */
 .btn-primary {
   border-radius: var(--radius-sm);
   padding: 8px 16px;
@@ -222,10 +252,12 @@ h2 {
 .btn-primary:hover {
   background: var(--primary-dark);
 }
+
 .btn-primary.disabled {
   opacity: 0.3;
 }
 
+/* Secondary Button */
 .btn-secondary {
   border-radius: var(--radius-sm);
   padding: 8px 16px;
@@ -241,7 +273,7 @@ h2 {
   background: var(--secondary-dark);
 }
 
-/* Section Containers */
+/* SECTION CONTAINERS */
 .wide-container {
   max-width: 1440px;
   width: 100%;

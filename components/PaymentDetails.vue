@@ -122,7 +122,7 @@
 .input-field-icon {
   position: absolute;
   right: 21px;
-  bottom: 15px;
+  bottom: 17px;
   width: 14px;
   height: 14px;
   pointer-events: none;
