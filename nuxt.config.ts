@@ -24,7 +24,7 @@ export default defineNuxtConfig({
           href: "/taas-test/favicon-512x512.png",
         },
         { rel: "apple-touch-icon", href: "/taas-test/apple-touch-icon.png" },
-        { rel: "manifest", href: "/taas-test/manifest.json" }, // Add this
+        { rel: "manifest", href: "/taas-test/manifest.json" },
       ],
     },
   },
