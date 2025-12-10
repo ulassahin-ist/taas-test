@@ -12,20 +12,16 @@ const toggle = (i) => {
   <footer class="w-full page-pad">
     <div class="footer container flex column">
       <div class="footer-nav flex">
-        <div
-          class="footer-column flex column"
-          :class="{ open: activeColumnIndex === 0 }"
-        >
+        <div class="footer-column" :class="{ open: activeColumnIndex === 0 }">
           <button class="footer-toggle" @click="toggle(0)">
             <span class="footer-heading">CORPORATE</span>
-            <span class="footer-toggle-icon">
-              <img
-                class="rotated-button"
-                v-if="activeColumnIndex === 0"
-                src="/icons/up.svg"
-              />
-              <img v-else src="/icons/down.svg" />
-            </span>
+
+            <img
+              class="rotated-button mobile"
+              v-if="activeColumnIndex === 0"
+              src="/icons/up.svg"
+            />
+            <img v-else src="/icons/down.svg" class="mobile" />
           </button>
 
           <ul class="footer-list flex column">
@@ -34,22 +30,19 @@ const toggle = (i) => {
             <li><a href="#">Human resources</a></li>
             <li><a href="#">News from us</a></li>
           </ul>
+          <div class="footer-divider mobile"></div>
         </div>
 
-        <div
-          class="footer-column flex column"
-          :class="{ open: activeColumnIndex === 1 }"
-        >
+        <div class="footer-column" :class="{ open: activeColumnIndex === 1 }">
           <button class="footer-toggle" @click="toggle(1)">
             <span class="footer-heading">SHOPPING</span>
-            <span class="footer-toggle-icon">
-              <img
-                class="rotated-button"
-                v-if="activeColumnIndex === 1"
-                src="/icons/up.svg"
-              />
-              <img v-else src="/icons/down.svg" />
-            </span>
+
+            <img
+              class="rotated-button mobile"
+              v-if="activeColumnIndex === 1"
+              src="/icons/up.svg"
+            />
+            <img v-else src="/icons/down.svg" class="mobile" />
           </button>
 
           <ul class="footer-list flex column">
@@ -58,22 +51,19 @@ const toggle = (i) => {
             <li><a href="#">Delivery Conditions</a></li>
             <li><a href="#">Secure shopping</a></li>
           </ul>
+          <div class="footer-divider mobile"></div>
         </div>
 
-        <div
-          class="footer-column flex column"
-          :class="{ open: activeColumnIndex === 2 }"
-        >
+        <div class="footer-column" :class="{ open: activeColumnIndex === 2 }">
           <button class="footer-toggle" @click="toggle(2)">
             <span class="footer-heading">LEGAL</span>
-            <span class="footer-toggle-icon">
-              <img
-                class="rotated-button"
-                v-if="activeColumnIndex === 2"
-                src="/icons/up.svg"
-              />
-              <img v-else src="/icons/down.svg" />
-            </span>
+
+            <img
+              class="rotated-button mobile"
+              v-if="activeColumnIndex === 2"
+              src="/icons/up.svg"
+            />
+            <img v-else src="/icons/down.svg" class="mobile" />
           </button>
 
           <ul class="footer-list flex column">
@@ -82,44 +72,38 @@ const toggle = (i) => {
             <li><a href="#">Membership Agreement</a></li>
             <li><a href="#">Distance Selling Contract</a></li>
           </ul>
+          <div class="footer-divider mobile"></div>
         </div>
 
-        <div
-          class="footer-column flex column"
-          :class="{ open: activeColumnIndex === 3 }"
-        >
+        <div class="footer-column" :class="{ open: activeColumnIndex === 3 }">
           <button class="footer-toggle" @click="toggle(3)">
             <span class="footer-heading">HELP CENTER</span>
-            <span class="footer-toggle-icon">
-              <img
-                class="rotated-button"
-                v-if="activeColumnIndex === 3"
-                src="/icons/up.svg"
-              />
-              <img v-else src="/icons/down.svg" />
-            </span>
+
+            <img
+              class="rotated-button mobile"
+              v-if="activeColumnIndex === 3"
+              src="/icons/up.svg"
+            />
+            <img v-else src="/icons/down.svg" class="mobile" />
           </button>
 
           <ul class="footer-list flex column">
             <li><a href="#">FAQ</a></li>
             <li><a href="#">Contact center</a></li>
           </ul>
+          <div class="footer-divider mobile"></div>
         </div>
 
-        <div
-          class="footer-column flex column"
-          :class="{ open: activeColumnIndex === 4 }"
-        >
+        <div class="footer-column" :class="{ open: activeColumnIndex === 4 }">
           <button class="footer-toggle" @click="toggle(4)">
             <span class="footer-heading">CONTACT US</span>
-            <span class="footer-toggle-icon">
-              <img
-                class="rotated-button"
-                v-if="activeColumnIndex === 4"
-                src="/icons/up.svg"
-              />
-              <img v-else src="/icons/down.svg" />
-            </span>
+
+            <img
+              class="rotated-button mobile"
+              v-if="activeColumnIndex === 4"
+              src="/icons/up.svg"
+            />
+            <img v-else src="/icons/down.svg" class="mobile" />
           </button>
 
           <ul class="footer-list flex column">
@@ -131,7 +115,7 @@ const toggle = (i) => {
               >
             </li>
             <li class="flex gap-8">
-              <img src="/icons/phone.svg" class="flex center" />
+              <img src="/icons/phone.svg" />
               <a href="#">0850 755 9987</a>
             </li>
             <li class="flex gap-8">
@@ -139,6 +123,7 @@ const toggle = (i) => {
               <a href="#">info@watsons.com.tr</a>
             </li>
           </ul>
+          <div class="footer-divider mobile"></div>
         </div>
       </div>
 
@@ -190,6 +175,8 @@ const toggle = (i) => {
 .footer-column {
   gap: 34px;
   width: 160px;
+  display: flex;
+  flex-direction: column;
 }
 
 .footer-toggle {
@@ -202,7 +189,7 @@ const toggle = (i) => {
   cursor: pointer;
   font-weight: 500;
   font-size: 12px;
-  line-height: 16px;
+  line-height: 0;
   letter-spacing: 0px;
   height: 16px;
 }
@@ -213,11 +200,6 @@ const toggle = (i) => {
   line-height: 20px;
 }
 
-.footer-toggle-icon {
-  font-size: 16px;
-  height: 16px;
-}
-
 .footer-list {
   list-style: none;
   padding: 0;
@@ -226,6 +208,11 @@ const toggle = (i) => {
 }
 .footer-list img {
   height: fit-content;
+}
+.footer-divider {
+  height: 1px;
+  width: 100%;
+  background: var(--smoke);
 }
 .copyright-socials {
   justify-content: space-between;
@@ -243,7 +230,11 @@ const toggle = (i) => {
 
 .socials img {
   cursor: pointer;
+  height: 32px;
+  width: 32px;
+  display: block;
 }
+
 @media (min-width: 769px) {
   .mobile {
     display: none;
@@ -264,55 +255,69 @@ const toggle = (i) => {
   .footer-toggle {
     pointer-events: none;
   }
-
-  .footer-toggle-icon {
-    display: none;
-  }
 }
 
 @media (max-width: 768px) {
   .desktop {
     display: none;
   }
+
   .page-pad {
     padding: 16px;
   }
+
   .footer {
-    gap: 28px;
+    gap: 24px;
   }
+
   .footer-nav {
     flex-direction: column;
     gap: 16px;
   }
-  .footer-toggle {
-    padding: 4px 5px 4px 0;
-    height: auto;
-  }
-  .rotated-button {
-    transform: translate(3px, -1px) rotate(-2deg);
-  }
+
   .footer-column {
-    gap: 2px;
-    border-bottom: 1px solid var(--smoke);
+    /* max-height: 33px; */
+    gap: 0;
     width: 100%;
   }
+
+  .footer-toggle {
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  .footer-toggle img {
+    height: 24px;
+    width: 24px;
+    display: block;
+  }
+  .rotated-button mobile {
+    transform: translate(0, 0) rotate(-1deg);
+  }
+
   .footer-list {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    visibility: hidden;
     gap: 8px;
+  }
+
+  .footer-column.open {
+    max-height: none;
   }
 
   .footer-column.open .footer-list {
     max-height: 200px;
     opacity: 1;
-    visibility: visible;
+    display: flex;
+    margin-bottom: 16px;
   }
 
-  .footer-column.open {
-    padding-bottom: 16px;
-    gap: 16px;
+  .footer-column.open .footer-toggle {
+    margin-bottom: 16px;
   }
 
   .copyright {

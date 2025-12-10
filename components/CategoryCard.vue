@@ -33,6 +33,7 @@ defineProps({
   overflow: hidden;
   box-shadow: 0px 1px 8px 0px #0000000a;
   transition: all 0.15s ease-in-out;
+  /* box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3); */
 }
 .category-card-image-wrapper {
   position: absolute;
@@ -42,13 +43,29 @@ defineProps({
   overflow: hidden;
   z-index: -1;
 }
-img {
+.category-card-image-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
+  z-index: 1;
+  background: var(--smoke-50);
+  opacity: 0.15;
+  pointer-events: none;
+}
+.category-card-image-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   display: block;
+  position: relative;
+  z-index: 0;
+  /* Cant figure out what effects are on the figma */
+  filter: contrast(1.05) saturate(0.9) brightness(1.05);
+  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
 }
+
 .category-card-content {
   padding: 16px;
   border-radius: var(--radius-md);
