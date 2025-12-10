@@ -1,7 +1,5 @@
 # 🛍️ The Taas Company Case – E-Commerce Frontend
 
-\*A pixel-perfect, mobile-first Nuxt project by **Ulaş Şahin\***
-
 [![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://ulassahin-ist.github.io/taas-test/)
 [![GitHub](https://img.shields.io/badge/github-repository-blue)](https://github.com/ulassahin-ist/taas-test)
 
